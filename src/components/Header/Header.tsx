@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { menu } from '~/constants';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 import './index.scss';
 import { useLocation } from 'react-router-dom';
-import { Button, Switch } from '@nextui-org/react';
+import { Switch } from '@nextui-org/react';
 import ItemMenu from './ItemMenu';
 import LoginModal from '../AuthComponent/LoginModal';
 

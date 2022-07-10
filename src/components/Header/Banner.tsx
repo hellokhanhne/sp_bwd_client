@@ -1,4 +1,4 @@
-import React, { useLayoutEffect } from 'react';
+import React from 'react';
 import useScript from '~/hooks/useScript';
 const urls = [
   'https://cdnjs.cloudflare.com/ajax/libs/three.js/r66/three.min.js',
