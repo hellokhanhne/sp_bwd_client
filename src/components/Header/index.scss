@@ -12,3 +12,22 @@
     color: #0d6efd;
   }
 }
+.nav-hover {
+  position: relative;
+  & .nav-link:before {
+    background: currentColor;
+    content: '';
+    height: 1pt;
+    position: absolute;
+    top: 75%;
+    transform: scaleX(0);
+    transform-origin: 0 10%;
+    transition: transform 0.3s;
+    width: 80%;
+  }
+
+  & .nav-link:hover:before {
+    transform: scaleX(1);
+    transform-origin: 100% 50%;
+  }
+}

@@ -11,7 +11,7 @@ const Header = () => {
   useEffect(() => console.log(location.pathname));
   return (
     <>
-      <nav className='navbar navbar-expand-md navbar-light  py-3'>
+      <nav className='navbar navbar-expand-md navbar-light  py-1'>
         <div className='container'>
           <a href='#' className='navbar-brand d-flex align-items-center'>
             {' '}
@@ -39,9 +39,15 @@ const Header = () => {
                   active={location.pathname === item.href ? true : false}
                 />
               ))}
-              <li className='nav-item active'>
-                <a className='nav-link fst-italic fs-5 fw-500'>
+              <ItemMenu
+                href='/login'
+                name='Login'
+                active={location.pathname === '/login' ? true : false}
+              />
+              <li className='nav-item'>
+                <a className='nav-link '>
                   <Switch
+                    className='mt-1'
                     checked={true}
                     size='xs'
                     iconOn={<FontAwesomeIcon icon={faSun} />}
