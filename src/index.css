@@ -9,3 +9,19 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
+
+.flex-1 {
+  flex: 1;
+}
+
+canvas {
+  width: 60% !important;
+  height: auto !important;
+}
+
+@media (max-width: 768px) {
+  canvas {
+    width: 100% !important;
+    height: auto !important;
+  }
+}
