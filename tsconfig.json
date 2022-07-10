@@ -26,6 +26,6 @@
       "~/*": ["src/*"]
     }
   },
-  "include": ["vite.config.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["vite.config.ts", "**/*.ts", "**/*.tsx", "src/components/Header/Banner.jsx", "src/components/Header/Banner.jsx"],
   "exclude": ["node_modules"]
 }
