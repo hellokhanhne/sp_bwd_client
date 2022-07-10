@@ -1,25 +1,22 @@
+import { useContext } from 'react';
+import Footer from '~/components/Footer/Footer';
 import { Header } from '~/components/Header';
-import useScript from '~/hooks/useScript';
-const urls = [
-  'https://cdnjs.cloudflare.com/ajax/libs/three.js/66/three.min.js',
-  'https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js',
-  'https://s3-eu-west-1.amazonaws.com/three-globe-assets/js/TrackballControls.js',
-  'https://s3-eu-west-1.amazonaws.com/three-globe-assets/js/geodata.js',
-  'https://s3-eu-west-1.amazonaws.com/three-globe-assets/js/threeGeoJSON.js',
-  'index.js',
-];
-const BaseLayout = () => {
-  urls.forEach((u) => {
-    console.log(u);
-    useScript(u);
-  });
+import Banner from '~/components/Header/Banner';
+import { IThemeContext, ThemeContext } from '~/context/ThemeContext';
+
+const BaseLayout = ({ children }: { children: JSX.Element }) => {
+  const {
+    themeState: { mode },
+    setMode,
+  } = useContext(ThemeContext) as IThemeContext;
+
   return (
-    <>
-      <Header />
-      <div className='slider-banner '>
-        <div className='left  d-flex justify-content-end'></div>
-      </div>
-    </>
+    <div className={mode}>
+      <Header setMode={setMode} />
+      <Banner />
+      {children}
+      <Footer />
+    </div>
   );
 };
 

@@ -9,13 +9,13 @@ const renderer = new THREE.WebGLRenderer({ alpha: true });
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.querySelector('.slider-banner .left').appendChild(renderer.domElement);
 
-let controls = new THREE.TrackballControls(camera);
-controls.noZoom = true;
+// let controls = new THREE.TrackballControls(camera);
+// controls.noZoom = true;
 const earthRadius = 14;
 const planet = new THREE.Object3D();
 const geometry = new THREE.SphereGeometry(earthRadius, 32, 32);
 const material = new THREE.MeshBasicMaterial({
-  color: 0x6c54a9,
+  color: 0x56ccf2,
   wireframe: false,
   transparent: false,
 });
@@ -142,11 +142,11 @@ function createSplineDots(origin, destination) {
   }
 
   const pMaterial = new THREE.ParticleBasicMaterial({
-    color: 0x56ccf2,
+    color: 0xff1111,
     transparent: true,
     blending: THREE.AdditiveBlending,
     depthTest: true,
-    size: 0.1,
+    size: 0.2,
   });
 
   const particles = new THREE.ParticleSystem(particleGeometry, pMaterial);
@@ -219,7 +219,7 @@ function render() {
     cities[i].rotateOnAxis(rotateAxis, rotateAngle);
   }
 
-  controls.update();
+  // controls.update();
   scene.traverse(function (mesh) {
     if (mesh.update !== undefined) {
       mesh.update();

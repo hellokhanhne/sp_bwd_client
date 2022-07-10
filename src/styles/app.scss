@@ -9,3 +9,29 @@
 body {
   font-family: 'Poppins', sans-serif;
 }
+
+.light {
+  & .slider-banner {
+    background-color: unset;
+    overflow: hidden;
+  }
+  & nav {
+    background-color: unset;
+    & a {
+      color: #8a8a8a;
+    }
+  }
+}
+
+.dark {
+  & .slider-banner {
+    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+    overflow: hidden;
+  }
+  & nav {
+    background-color: #292c34;
+    & a {
+      color: #ffffff;
+    }
+  }
+}

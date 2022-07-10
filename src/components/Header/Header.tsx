@@ -4,19 +4,24 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 import './index.scss';
 import { useLocation } from 'react-router-dom';
-import { Switch } from '@nextui-org/react';
+import { Button, Switch } from '@nextui-org/react';
 import ItemMenu from './ItemMenu';
-const Header = () => {
+import LoginModal from '../AuthComponent/LoginModal';
+
+interface IHeaderProps {
+  setMode: () => void;
+}
+const Header = ({ setMode }: IHeaderProps) => {
   const location = useLocation();
-  useEffect(() => console.log(location.pathname));
+
   return (
     <>
-      <nav className='navbar navbar-expand-md navbar-light  py-1'>
+      <nav className='navbar navbar-expand-md py-1 shadow'>
         <div className='container'>
           <a href='#' className='navbar-brand d-flex align-items-center'>
             {' '}
             <i className='fa fa-snowflake-o fa-lg text-primary mr-2'></i>
-            <strong className='logo fs-3'>iConnect</strong>
+            <strong className='logo fs-2'>iConnect</strong>
           </a>
           <button
             type='button'
@@ -39,21 +44,27 @@ const Header = () => {
                   active={location.pathname === item.href ? true : false}
                 />
               ))}
-              <ItemMenu
+              {/* <ItemMenu
                 href='/login'
                 name='Login'
                 active={location.pathname === '/login' ? true : false}
-              />
+              /> */}
               <li className='nav-item'>
                 <a className='nav-link '>
                   <Switch
-                    className='mt-1'
+                    onChange={setMode}
+                    className='mt-2'
                     checked={true}
                     size='xs'
                     iconOn={<FontAwesomeIcon icon={faSun} />}
                     iconOff={<FontAwesomeIcon icon={faMoon} />}
                   />
                 </a>
+              </li>
+              <li className='nav-item'>
+                <div className='h-100 d-flex justify-content-center align-items-center ms-3'>
+                  <LoginModal />
+                </div>
               </li>
             </ul>
           </div>
