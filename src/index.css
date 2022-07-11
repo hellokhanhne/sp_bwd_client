@@ -15,7 +15,7 @@ code {
 }
 
 canvas {
-  width: 70% !important;
+  width: 65% !important;
   height: auto !important;
 }
 
@@ -23,5 +23,11 @@ canvas {
   canvas {
     width: 100% !important;
     height: auto !important;
+  }
+}
+
+@media (max-width:962px) {
+  .top-banner-info{
+    display:none !important;
   }
 }

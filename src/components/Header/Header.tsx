@@ -20,7 +20,6 @@ const Header = ({ setMode }: IHeaderProps) => {
         <div className='container'>
           <a href='#' className='navbar-brand d-flex align-items-center'>
             {' '}
-            <i className='fa fa-snowflake-o fa-lg text-primary mr-2'></i>
             <strong className='logo fs-2'>iConnect</strong>
           </a>
           <button

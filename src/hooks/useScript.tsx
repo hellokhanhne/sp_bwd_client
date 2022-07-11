@@ -7,7 +7,7 @@ const useScript = (url: string) => {
     script.src = url;
     script.async = true;
 
-    window.document.body.appendChild(script);
+    document.body.appendChild(script);
     // console.log(script);
     return () => {
       // console.log('remove');

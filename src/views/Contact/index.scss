@@ -1,0 +1,13 @@
+.dark {
+  & .contact {
+    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+    & p,
+    & h2 {
+      color: #ffffff;
+    }
+
+    & .icon {
+      color: #ffffff !important;
+    }
+  }
+}

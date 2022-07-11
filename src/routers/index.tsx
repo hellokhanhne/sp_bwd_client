@@ -1,5 +1,5 @@
 import About from '~/views/About';
-import Login from '~/views/Auth/Login';
+import Contact from '~/views/Contact/Contact';
 import Home from '~/views/Home';
 interface iPublicRoute {
   path: string;
@@ -15,8 +15,8 @@ export const publicRoutes: iPublicRoute[] = [
     element: <About />,
   },
   {
-    path: '/login',
-    element: <Login />,
+    path: '/contact',
+    element: <Contact />,
   },
 ];
 
