@@ -1,0 +1,19 @@
+.influencers {
+  & .title {
+    font-weight: 600;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    color: #162232;
+    font-size: 34px;
+  }
+
+  & tbody tr {
+    cursor: pointer;
+    border-radius: 5px;
+    overflow: hidden;
+    &:hover {
+      background-color: #f4f4f4;
+    }
+  }
+}
