@@ -185,7 +185,7 @@ var geodata = {
   ]
 }
 
-https://s3-eu-west-1.amazonaws.com/three-globe-assets/js/threeGeoJSON.js
+// https://s3-eu-west-1.amazonaws.com/three-globe-assets/js/threeGeoJSON.js
 function drawThreeGeo(json, radius, shape, materalOptions, container) {
   container = container || window.scene;
 

@@ -5,9 +5,8 @@ const urls = [
   'https://cdnjs.cloudflare.com/ajax/libs/three.js/r66/three.min.js',
   'https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js',
   // 'https://s3-eu-west-1.amazonaws.com/three-globe-assets/js/TrackballControls.js',
-  'https://s3-eu-west-1.amazonaws.com/three-globe-assets/js/geodata.js',
+  // 'https://s3-eu-west-1.amazonaws.com/three-globe-assets/js/geodata.js',
   // 'https://s3-eu-west-1.amazonaws.com/three-globe-assets/js/threeGeoJSON.js',
-  // 'geodata.js',
   'index.js',
 ];
 let url: string;

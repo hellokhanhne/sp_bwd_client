@@ -13,21 +13,27 @@
     "format": "npm run prettier:fix && npm run lint:fix"
   },
   "dependencies": {
-    "3d-earth": "^1.0.8",
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
     "@fortawesome/free-regular-svg-icons": "^6.1.1",
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@nextui-org/react": "^1.0.0-beta.9",
+    "@types/aos": "^3.0.4",
+    "@types/lodash": "^4.14.182",
+    "@types/react-countup": "^4.3.1",
+    "@types/styled-components": "^5.1.25",
     "aos": "^2.3.4",
     "babel-plugin-macros": "^3.1.0",
     "bootstrap": "^5.1.3",
+    "lodash": "^4.17.21",
     "react": "^18.1.0",
-    "react-bootstrap": "^2.4.0",
     "react-dom": "^18.1.0",
+    "react-marquee-slider": "^1.1.5",
     "react-router-dom": "^6.3.0",
     "react-script-tag": "^1.1.2",
-    "sass": "^1.53.0"
+    "sass": "^1.53.0",
+    "styled-components": "^5.3.5",
+    "use-count-up": "^3.0.1"
   },
   "devDependencies": {
     "@types/react": "^18.0.9",

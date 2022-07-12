@@ -1,8 +1,14 @@
 import { Route, Routes } from 'react-router-dom';
 import BaseLayout from './layout/BaseLayout';
 import { publicRoutes } from './routers';
-import Home from './views/Home';
+import 'aos/dist/aos.css';
+import AOS from 'aos';
+import { useEffect } from 'react';
 function App() {
+  useEffect(() => {
+    AOS.init({ duration: 3000 });
+    AOS.refresh();
+  });
   return (
     <>
       <BaseLayout>

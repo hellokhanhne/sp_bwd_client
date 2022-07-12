@@ -1,7 +1,50 @@
 import React from 'react';
-
+import CardTop from '~/components/Card/CardTop';
+import CardWords from '~/components/Card/CardWords';
+import About from '~/components/Portfolio/About';
+import { MarqueeSlide } from '~/components/Slider/MarqueSlide';
+import { CitiesSlider } from '~/components/Slider/Slider';
+import Title from '~/components/Title/Title';
+import { topdata } from '~/constants/data';
+import './index.scss';
 const Home = () => {
-  return <div className='container-fluid'>Home ba aba </div>;
+  return (
+    <div className='home container-fluid pt-5'>
+      <div className='container justify-content-center'>
+        <h1 className='text-center logo'>iConnect</h1>
+        <h3 className='text-center'>Global</h3>
+        <div className='row d-flex justify-content-center'>
+          {topdata.map((item, i) => (
+            <div key={i} className='col-12 col-md-4 col-lg-3' data-aos='zoom-in-right'>
+              <CardTop
+                cardTitle={item.title}
+                cardSubtitle={item.sub}
+                value={item.value}
+                color={item.color}
+              />
+            </div>
+          ))}
+        </div>
+        <div className='text-center mt-5'>
+          <Title title='influencers to grow' text='Why do influencers love iConnect?' />
+        </div>
+        <div className='row d-flex mt-3 justify-content-center'>
+          <About
+            img='http://mcvideomd1fr.keeng.net/playnow/images/channel/avatar/20200429/YHIwrx6UKeaeJ3QA.jpg'
+            avg={77}
+            desc='Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum dignissimos reiciendis similique inventore, eaque at praesentium molestias nihil modi, quam delectus corrupti laudantium ...'
+            exp='3'
+            follow={364739}
+            data-aos='fade-up'
+          />
+        </div>
+      </div>
+      <div className='row d-flex justify-content-center mh-100'>
+        <MarqueeSlide />
+      </div>
+      {/* <CitiesSlider /> */}
+    </div>
+  );
 };
 
 export default Home;

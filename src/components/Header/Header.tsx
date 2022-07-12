@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { menu } from '~/constants';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
@@ -13,7 +13,13 @@ interface IHeaderProps {
 }
 const Header = ({ setMode }: IHeaderProps) => {
   const location = useLocation();
-
+  const [checked, setChecked] = useState(false);
+  useEffect(() => {
+    const time = new Date().getHours();
+    if ([6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17].includes(time)) {
+      setChecked(true);
+    }
+  }, []);
   return (
     <>
       <nav className='navbar navbar-expand-md py-1 shadow'>
@@ -53,7 +59,7 @@ const Header = ({ setMode }: IHeaderProps) => {
                   <Switch
                     onChange={setMode}
                     className='mt-2'
-                    checked={true}
+                    checked={checked}
                     size='xs'
                     iconOn={<FontAwesomeIcon icon={faSun} />}
                     iconOff={<FontAwesomeIcon icon={faMoon} />}

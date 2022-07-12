@@ -1,0 +1,16 @@
+.dark {
+  & .home {
+    background-color: #292c34;
+  }
+  & .icon,
+  & h5,
+  & h2 {
+    color: #ffffff !important;
+  }
+}
+.nav{
+  background-color: #292c34;
+  & li{
+    height: 40px;
+  }
+}

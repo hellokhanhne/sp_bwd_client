@@ -38,7 +38,7 @@ const LoginModal = () => {
             placeholder='Email'
             contentLeft={<Mail fill='currentColor' />}
           />
-          <Input
+          <Input.Password
             clearable
             bordered
             fullWidth
