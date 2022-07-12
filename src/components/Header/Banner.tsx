@@ -1,19 +1,20 @@
-import React from 'react';
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import useScript from '~/hooks/useScript';
-const urls = [
-  'https://cdnjs.cloudflare.com/ajax/libs/three.js/r66/three.min.js',
-  'https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js',
-  // 'https://s3-eu-west-1.amazonaws.com/three-globe-assets/js/TrackballControls.js',
-  // 'https://s3-eu-west-1.amazonaws.com/three-globe-assets/js/geodata.js',
-  // 'https://s3-eu-west-1.amazonaws.com/three-globe-assets/js/threeGeoJSON.js',
-  'index.js',
-];
-let url: string;
+
 const Banner = () => {
-  for (url of urls) {
-    useScript(url);
-  }
+  useEffect(() => {
+    const script = window.document.createElement('script');
+    script.src = 'index.js';
+    script.async = true;
+    document.body.appendChild(script);
+    console.log('loadscrit');
+    return () => {
+      console.log('remove script');
+      document.body.removeChild(script);
+    };
+  }, []);
+
+  console.log('mouted');
 
   return (
     <div className='slider-banner ' style={{ position: 'relative' }}>
@@ -39,12 +40,12 @@ const Banner = () => {
         <div className='shooting_star'></div>
         <div className='shooting_star'></div>
       </div>
-      <div className='position-absolute top-50 start-0 ms-5 items-center'>
+      <div className='top-banner-wrapper'>
         <div className='top-banner-info'>
           <h3 className=''>
-            Top Influencer Marketing Software <br /> for Influencers and Brands —
+            Top Influencer Marketing Software <br /> for Influencers and Brands
           </h3>
-          <h2 className='ps-4 logo'>iConnect</h2>
+          {/* <h2 className='ps-4 logo'>iConnect</h2> */}
           <div className='mt-3' style={{ width: 180 }}>
             <Link className='button button-primary' to='/register'>
               Get Started

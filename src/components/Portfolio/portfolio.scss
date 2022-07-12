@@ -71,7 +71,8 @@
       font-size: 0.9rem;
       font-weight: 400;
       color: var(--color-light);
-      margin: 2rem 0;
+      margin: 1.5rem 0;
+      margin-top: 0;
     }
 
     /* ================== MEDIA QUERY =================== */
@@ -90,7 +91,7 @@
       }
 
       .about-image img {
-        height: 16rem;
+        height: 14rem;
       }
 
       .content-container {
@@ -197,7 +198,7 @@
   & .home {
     & #about {
       & p,
-      & h3{
+      & h3 {
         color: #ffffff !important;
       }
     }

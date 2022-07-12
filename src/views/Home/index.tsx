@@ -1,21 +1,20 @@
-import React from 'react';
 import CardTop from '~/components/Card/CardTop';
-import CardWords from '~/components/Card/CardWords';
 import About from '~/components/Portfolio/About';
 import { MarqueeSlide } from '~/components/Slider/MarqueSlide';
-import { CitiesSlider } from '~/components/Slider/Slider';
 import Title from '~/components/Title/Title';
 import { topdata } from '~/constants/data';
 import './index.scss';
 const Home = () => {
   return (
     <div className='home container-fluid pt-5'>
-      <div className='container justify-content-center'>
-        <h1 className='text-center logo'>iConnect</h1>
-        <h3 className='text-center'>Global</h3>
+      <div className='container justify-content-center mb-4'>
+        <h1 className='text-center logo mb-5'>iConnect Global</h1>
+        {/* <h3 className='text-center'>
+          <b>Global</b>
+        </h3> */}
         <div className='row d-flex justify-content-center'>
           {topdata.map((item, i) => (
-            <div key={i} className='col-12 col-md-4 col-lg-3' data-aos='zoom-in-right'>
+            <div key={i} className='col-12 col-md-4 col-lg-3  mb-4' data-aos='zoom-in-right'>
               <CardTop
                 cardTitle={item.title}
                 cardSubtitle={item.sub}
@@ -26,7 +25,7 @@ const Home = () => {
           ))}
         </div>
         <div className='text-center mt-5'>
-          <Title title='influencers to grow' text='Why do influencers love iConnect?' />
+          <Title title='Influencers to grow' text='Why do influencers love iConnect?' />
         </div>
         <div className='row d-flex mt-3 justify-content-center'>
           <About

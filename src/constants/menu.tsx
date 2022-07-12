@@ -18,6 +18,12 @@ export const menu = [
     child: [],
   },
   {
+    name: 'Top influencers',
+    href: '/top-influencers',
+    icon: <i className='fa fa-home'></i>,
+    child: [],
+  },
+  {
     name: 'Contact',
     href: '/contact',
     icon: <i className='fa fa-home'></i>,

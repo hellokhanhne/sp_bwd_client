@@ -44,7 +44,7 @@ const About = ({
               </div>
             </div>
 
-            <p className='text'>{desc}</p>
+            <p className='text text-muted'>{desc}</p>
             <button className='button button-primary'>See More</button>
           </div>
         </div>

@@ -9,14 +9,16 @@ const CardTop = ({ cardTitle, value, cardSubtitle, color }: any) => (
     style={{ borderBottomWidth: 5, borderBottomColor: color }}
   >
     <Card.Header>
-      <Text h4>{cardTitle}</Text>
+      <Text h4 className='font-popin'>
+        {cardTitle}
+      </Text>
     </Card.Header>
-    <Card.Body>
+    <Card.Body className='pt-0'>
       <Text h1 color={color}>
         <CountUp isCounting end={value} duration={3.2} key={value} /> +
       </Text>
-      <Text>{new Date().toDateString()}</Text>
-      <Text>{cardSubtitle}</Text>
+      <Text className='text-muted '>{new Date().toDateString()}</Text>
+      <Text className='text-muted '>{cardSubtitle}</Text>
     </Card.Body>
   </Card>
 );

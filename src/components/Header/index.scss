@@ -201,3 +201,32 @@ $shooting-time: 3000ms;
     transform: rotate(45 + 360deg);
   }
 }
+
+.top-banner {
+  &-wrapper {
+    position: absolute;
+
+    left: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+
+    & .button {
+      height: 50px !important;
+      margin-top: 20px;
+      padding: 0px 100px !important;
+      box-sizing: content-box;
+    }
+  }
+  &-info {
+    h3 {
+      color: #141c50;
+      font-weight: bold;
+      line-height: 50px;
+      white-space: pre-wrap;
+      margin-top: 0;
+      font-size: 32px;
+      font-family: 'Poppins', sans-serif;
+      max-width: 480px;
+    }
+  }
+}

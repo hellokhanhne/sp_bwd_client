@@ -11,13 +11,19 @@ function App() {
   });
   return (
     <>
-      <BaseLayout>
-        <Routes>
-          {publicRoutes.map((item, i) => (
-            <Route key={i} path={item.path} element={item.element} />
-          ))}
-        </Routes>
-      </BaseLayout>
+      <Routes>
+        {publicRoutes.map((item, i) => (
+          <Route
+            key={i}
+            path={item.path}
+            element={
+              <BaseLayout bannerShow={['/'].includes(item.path) ? true : false}>
+                <>{item.element}</>{' '}
+              </BaseLayout>
+            }
+          />
+        ))}
+      </Routes>
     </>
   );
 }
