@@ -33,7 +33,7 @@ const Home = () => {
             img='http://mcvideomd1fr.keeng.net/playnow/images/channel/avatar/20200429/YHIwrx6UKeaeJ3QA.jpg'
             avg={77}
             desc='Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum dignissimos reiciendis similique inventore, eaque at praesentium molestias nihil modi, quam delectus corrupti laudantium ...'
-            exp='3'
+            exp={3}
             follow={364739}
             data-aos='fade-up'
           />
@@ -43,7 +43,6 @@ const Home = () => {
         <MarqueeSlide />
       </div>
       <CitiesSlider />
-      
     </div>
   );
 };
