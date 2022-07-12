@@ -1,5 +1,6 @@
 import { Col, Row, Table, User } from '@nextui-org/react';
 import React from 'react';
+import { IconSlide } from '~/components/Slider/IconSlider';
 import users from '../../constants/response.json';
 import './index.scss';
 
@@ -111,6 +112,9 @@ export default function TopInfluencers() {
           )}
         </Table.Body>
       </Table>
+      <div className='position-fixed fixed-bottom'>
+        <IconSlide />
+      </div>
     </div>
   );
 }

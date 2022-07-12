@@ -24,4 +24,14 @@ export const influencerstop = [
     img: 'https://img.vn/uploads/version/img24-png-20190726133727cbvncjKzsQ.png',
     name: 'jonhny',
   },
+  {
+    decs: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum dignissimos reiciendis similique inventore, eaque at praesentium molestias nihil modi, quam delectus corrupti laudantium ...',
+    img: 'https://img.vn/uploads/version/img24-png-20190726133727cbvncjKzsQ.png',
+    name: 'jonhny',
+  },
+  {
+    decs: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum dignissimos reiciendis similique inventore, eaque at praesentium molestias nihil modi, quam delectus corrupti laudantium ...',
+    img: 'https://img.vn/uploads/version/img24-png-20190726133727cbvncjKzsQ.png',
+    name: 'jonhny',
+  },
 ];

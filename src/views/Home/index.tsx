@@ -1,6 +1,5 @@
 import CardTop from '~/components/Card/CardTop';
 import About from '~/components/Portfolio/About';
-import { IconSlide } from '~/components/Slider/IconSlider';
 import { MarqueeSlide } from '~/components/Slider/MarqueSlide';
 import { CitiesSlider } from '~/components/Slider/Slider';
 import Title from '~/components/Title/Title';
@@ -44,9 +43,7 @@ const Home = () => {
         <MarqueeSlide />
       </div>
       <CitiesSlider />
-      <div className='position-fixed fixed-bottom'>
-        <IconSlide />
-      </div>
+      
     </div>
   );
 };

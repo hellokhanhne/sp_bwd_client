@@ -3,6 +3,7 @@ import './portfolio.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAward, faUser, faProjectDiagram } from '@fortawesome/free-solid-svg-icons';
 import { Card } from '@nextui-org/react';
+import { CountUp } from 'use-count-up';
 const About = ({
   img,
   desc,
@@ -12,7 +13,7 @@ const About = ({
 }: {
   img: string;
   desc: string;
-  exp: string;
+  exp: number;
   follow: number;
   avg: number;
 }) => {
@@ -28,19 +29,25 @@ const About = ({
               <div className='content-box'>
                 <FontAwesomeIcon icon={faAward} className='icon' />
                 <h3>Experience</h3>
-                <p>{exp}+ years of experience </p>
+                <p>
+                  <CountUp isCounting start={0} end={exp} key={exp}></CountUp>+ years of experience{' '}
+                </p>
               </div>
 
               <div className='content-box'>
                 <FontAwesomeIcon icon={faUser} className='icon' />
                 <h3>follower</h3>
-                <p>{follow} followers.</p>
+                <p>
+                  <CountUp isCounting start={0} end={follow} key={follow}></CountUp> followers.
+                </p>
               </div>
 
               <div className='content-box'>
                 <FontAwesomeIcon icon={faProjectDiagram} className='icon' />
                 <h3>AVG</h3>
-                <p>{avg} point</p>
+                <p>
+                  <CountUp isCounting start={0} end={avg} key={avg}></CountUp> point
+                </p>
               </div>
             </div>
 
