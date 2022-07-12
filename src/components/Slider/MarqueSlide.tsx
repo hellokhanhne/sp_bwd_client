@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Marquee, { Scale } from 'react-marquee-slider';
-import times from 'lodash/times';
 import CardWords from '../Card/CardWords';
 import { influencerstop } from '~/constants/data';
 export const MarqueeSlide = () => {

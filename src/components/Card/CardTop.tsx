@@ -12,7 +12,7 @@ const CardTop = ({ cardTitle, value, cardSubtitle, color }: any) => (
       <Text h4>{cardTitle}</Text>
     </Card.Header>
     <Card.Body>
-      <Text h1 color={color}>
+      <Text h1 color={color} className='fs-2'>
         <CountUp isCounting end={value} duration={3.2} key={value} /> +
       </Text>
       <Text>{new Date().toDateString()}</Text>

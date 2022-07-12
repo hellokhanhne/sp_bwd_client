@@ -2,6 +2,7 @@ import React from 'react';
 import CardTop from '~/components/Card/CardTop';
 import CardWords from '~/components/Card/CardWords';
 import About from '~/components/Portfolio/About';
+import { IconSlide } from '~/components/Slider/IconSlider';
 import { MarqueeSlide } from '~/components/Slider/MarqueSlide';
 import { CitiesSlider } from '~/components/Slider/Slider';
 import Title from '~/components/Title/Title';
@@ -42,7 +43,10 @@ const Home = () => {
       <div className='row d-flex justify-content-center mh-100'>
         <MarqueeSlide />
       </div>
-      {/* <CitiesSlider /> */}
+      <CitiesSlider />
+      <div className='position-fixed fixed-bottom'>
+        <IconSlide />
+      </div>
     </div>
   );
 };
