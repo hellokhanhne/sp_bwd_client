@@ -4,7 +4,13 @@ import { Header } from '~/components/Header';
 import Banner from '~/components/Header/Banner';
 import { IThemeContext, ThemeContext } from '~/context/ThemeContext';
 
-const BaseLayout = ({ children }: { children: JSX.Element }) => {
+const BaseLayout = ({
+  children,
+  bannerShow = true,
+}: {
+  children: React.ReactNode;
+  bannerShow?: boolean;
+}) => {
   const {
     themeState: { mode },
     setMode,
@@ -13,7 +19,7 @@ const BaseLayout = ({ children }: { children: JSX.Element }) => {
   return (
     <div className={mode}>
       <Header setMode={setMode} />
-      <Banner />
+      {bannerShow && <Banner />}
       {children}
       <Footer />
     </div>

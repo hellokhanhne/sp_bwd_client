@@ -11,13 +11,13 @@ import './index.css';
 import { NextUIProvider } from '@nextui-org/react';
 import ThemeProvider from './context/ThemeContext';
 ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <ThemeProvider>
-        <NextUIProvider>
-          <App />
-        </NextUIProvider>
-      </ThemeProvider>
-    </BrowserRouter>
-  </React.StrictMode>,
+  // <React.StrictMode>
+  <BrowserRouter>
+    <ThemeProvider>
+      <NextUIProvider>
+        <App />
+      </NextUIProvider>
+    </ThemeProvider>
+  </BrowserRouter>,
+  // </React.StrictMode>
 );

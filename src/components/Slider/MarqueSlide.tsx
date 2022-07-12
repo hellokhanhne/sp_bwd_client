@@ -1,10 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Marquee, { Scale } from 'react-marquee-slider';
 import CardWords from '../Card/CardWords';
 import { influencerstop } from '~/constants/data';
 export const MarqueeSlide = () => {
-  const [loading, setLoading] = useState(true);
-
   return (
     <div
       style={{
@@ -16,11 +14,11 @@ export const MarqueeSlide = () => {
     >
       <Marquee
         direction='rtl'
-        velocity={20}
+        velocity={50}
         scatterRandomly={false}
         resetAfterTries={100}
-        onInit={() => setLoading(true)}
-        onFinish={() => setLoading(false)}
+        onInit={() => {}}
+        onFinish={() => {}}
       >
         {influencerstop.map((item, index) => (
           <Scale scale={1} key={`marquee-example-playground-${index}`}>

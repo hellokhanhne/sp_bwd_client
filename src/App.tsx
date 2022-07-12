@@ -4,6 +4,7 @@ import { publicRoutes } from './routers';
 import 'aos/dist/aos.css';
 import AOS from 'aos';
 import { useEffect } from 'react';
+import Loading from './components/Loading/Loading';
 function App() {
   useEffect(() => {
     AOS.init({ duration: 3000 });
@@ -11,13 +12,20 @@ function App() {
   });
   return (
     <>
-      <BaseLayout>
-        <Routes>
-          {publicRoutes.map((item, i) => (
-            <Route key={i} path={item.path} element={item.element} />
-          ))}
-        </Routes>
-      </BaseLayout>
+      <Routes>
+        <Route path='/loading' element={<Loading />} />
+        {publicRoutes.map((item, i) => (
+          <Route
+            key={i}
+            path={item.path}
+            element={
+              <BaseLayout bannerShow={['/'].includes(item.path) ? true : false}>
+                <>{item.element}</>{' '}
+              </BaseLayout>
+            }
+          />
+        ))}
+      </Routes>
     </>
   );
 }
