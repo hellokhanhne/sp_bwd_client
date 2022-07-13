@@ -26,7 +26,7 @@ const About = ({
           </div>
           <div className='about-container'>
             <div className='content-container'>
-              <div className='content-box'>
+              <div className='content-box shadow-lg'>
                 <FontAwesomeIcon icon={faAward} className='icon' />
                 <h3>Experience</h3>
                 <p>
@@ -34,7 +34,7 @@ const About = ({
                 </p>
               </div>
 
-              <div className='content-box'>
+              <div className='content-box shadow-lg'>
                 <FontAwesomeIcon icon={faUser} className='icon' />
                 <h3>follower</h3>
                 <p>
@@ -42,7 +42,7 @@ const About = ({
                 </p>
               </div>
 
-              <div className='content-box'>
+              <div className='content-box shadow-lg'>
                 <FontAwesomeIcon icon={faProjectDiagram} className='icon' />
                 <h3>AVG</h3>
                 <p>

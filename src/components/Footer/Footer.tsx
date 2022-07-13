@@ -1,41 +1,16 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFaceGrin } from '@fortawesome/free-solid-svg-icons';
 import React from 'react';
-
+import './footer.scss';
 const Footer = () => {
   return (
-    <footer className='text-center text-white'>
+    <footer className='text-center'>
       <div className='container p-4'>
-        <section className='mb-4'>
-          <a className='btn btn-outline-light btn-floating m-1' role='button'>
-            <FontAwesomeIcon icon={faFaceGrin} />
-          </a>
-
-          <a
-            className='btn btn-outline-light btn-floating m-1'
-            href='mailto:{{$gmail->value}}'
-            role='button'
-          >
-            <i className='fab fa-google'></i>
-          </a>
-
-          <a
-            className='btn btn-outline-light btn-floating m-1'
-            href='{{$youtube->value}}'
-            role='button'
-          >
-            <i className='fab fa-youtube'></i>
-          </a>
-        </section>
         <section className=''>
           <div className='row d-flex justify-content-center'>
             <div className='col-auto'>
-              <p className='pt-2'>
-                <strong className='text-primary'>Sign up for our newsletter</strong>
-              </p>
+              <h3 className='pt-1'>Sign up for our newsletter</h3>
             </div>
             <div className='col-md-5 col-12'>
-              <div className='input-group input-group-lg'>
+              <div className='input-group input-group'>
                 <span className='input-group-text' id='inputGroup-sizing-lg'>
                   Email
                 </span>
@@ -43,7 +18,7 @@ const Footer = () => {
               </div>
             </div>
             <div className='col-auto'>
-              <button type='submit' className='btn btn-lg text-uppercase bg-warning mb-4'>
+              <button type='submit' className='btn btn-md text-uppercase bg-warning mb-4'>
                 Subscribe
               </button>
             </div>
@@ -52,63 +27,74 @@ const Footer = () => {
 
         <section className=''>
           <div className='row'>
-            <div className='col-lg-3 col-md-6 mb-4 mb-md-0'>
+            <div className='col-lg-3 col-sm-6 mb-4 mb-md-0'>
               <div className='contaiter'>
-                <div className='row d-flex justify-content-center align-center'>
+                <div className='row '>
                   <h1 className='logo'>iConnect</h1>
                 </div>
               </div>
             </div>
-            <div className='col-lg-3 col-md-6 mb-4 mb-md-0'>
+            <div className='col-lg-3 col-sm-6 mb-4 mb-md-0'>
               <h5 className='text-uppercase'>Page</h5>
 
-              <ul className='list-unstyled mb-0'>
-                <li>
-                  <a href="{{url('car-all')}}">Product</a>
+              <ul className='list-unstyled mb-0' style={{ alignItems: 'flex-start' }}>
+                <li className='float-left'>
+                  <a href='#'>Influencer</a>
+                </li>
+                <li className='float-left'>
+                  <a href='#'>About</a>
                 </li>
                 <li>
-                  <a href="{{url('feed-back')}}">Contact</a>
-                </li>
-                <li>
-                  <a href="{{url('news')}}">News Page</a>
+                  <a href='#'>Contact</a>
                 </li>
               </ul>
             </div>
-            <div className='col-lg-3 col-md-6 mb-4 mb-md-0'>
+            <div className='col-lg-3 col-sm-6 mb-4 mb-md-0'>
               <h5 className='text-uppercase'>Contact</h5>
 
               <ul className='list-unstyled mb-0'>
                 <li>
-                  <a href='tel:{{$phone->value}}'>0345648638</a>
+                  <a href='#'>0345648638</a>
                 </li>
                 <li>
-                  <a href='mailto:{{$gmail->value}}'>hoanle396@gmail.com</a>
+                  <a href='#'>hoanle396@gmail.com</a>
                 </li>
                 <li>
-                  <a href='{{$facebook->value}}'>Facebook</a>
+                  <a href='#'>Facebook</a>
                 </li>
               </ul>
             </div>
-            <div className='col-lg-3 col-md-6 mb-4 mb-md-0'>
+            <div className='col-lg-3 col-sm-6 mb-4 mb-md-0'>
               <h5 className='text-uppercase'>Links</h5>
 
               <ul className='list-unstyled mb-0'>
                 <li>
-                  <a href='{{$facebook->value}}'>
-                    <i className='fab fa-facebook-f'></i>
+                  <a href='#' className=' '>
+                    <i className='fab fa-instagram'></i> Instagram
                   </a>
                 </li>
                 <li>
-                  <a href='{{$gmail->value}}'>
-                    <i className='fa fa-mail-forward'></i>
+                  <a href='#'>
+                    <i className='fab fa-youtube'></i> Youtube
                   </a>
                 </li>
                 <li>
-                  <a href='{{$youtube->value}}'>
-                    <i className='fab fa-youtube'></i>
+                  <a href='#'>
+                    <i className='fa fa-mail-forward'></i> Email
                   </a>
                 </li>
               </ul>
+            </div>
+          </div>
+          <div className='row copyright'>
+            <div className='col-lg-12 col-sm-12 mb-12 text-center'>
+              <p>
+                <small className='block fs-6'>
+                  VIETNAM-KOREA UNIVERSITY OF INFORMATIONAND COMMUNICATION TECHNOLOGY{' '}
+                </small>{' '}
+                <br />
+                <small className='block fs-6'>2021 &copy; All Rights Reserved.</small>
+              </p>
             </div>
           </div>
         </section>

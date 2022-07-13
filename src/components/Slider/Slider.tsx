@@ -1,5 +1,9 @@
 import React from 'react';
 import './slider.scss';
+import japane from '../../assets/images/guss_languages_japan-1220x732.jpg';
+import korea from '../../assets/images/korea.jpg';
+import america from '../../assets/images/north-america.webp';
+import australia from '../../assets/images/shutterstock.jpg';
 interface Iprops {
   slides: ISlider[];
 }
@@ -31,28 +35,24 @@ export class CitiesSlider extends React.Component {
   }
   slides = [
     {
-      city: 'Paris',
-      country: 'France',
-      img: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/paris.jpg',
+      city: 'Tokyto',
+      country: 'Japane',
+      img: japane,
     },
     {
-      city: 'Singapore',
-      img: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/singapore.jpg',
+      city: 'South',
+      country: 'Korea',
+      img: korea,
     },
     {
-      city: 'Prague',
-      country: 'Czech Republic',
-      img: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/prague.jpg',
+      city: 'North',
+      country: 'America',
+      img: america,
     },
     {
-      city: 'Amsterdam',
-      country: 'Netherlands',
-      img: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/amsterdam.jpg',
-    },
-    {
-      city: 'Moscow',
-      country: 'Russia',
-      img: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/moscow.jpg',
+      city: 'shutterstock',
+      country: 'australia',
+      img: australia,
     },
   ];
 
@@ -107,7 +107,7 @@ export class CitiesSlider extends React.Component {
                 <p className='slider__slide-readmore'>read more</p>
               </div>
               <div className='slider__slide-parts'>
-                {[...Array(this.IMAGE_PARTS)].map((x, i) => (
+                {[...Array(this.IMAGE_PARTS)].map((_, i) => (
                   <div className='slider__slide-part' key={i}>
                     <div
                       className='slider__slide-part-inner'

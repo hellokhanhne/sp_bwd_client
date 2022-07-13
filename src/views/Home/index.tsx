@@ -3,7 +3,7 @@ import About from '~/components/Portfolio/About';
 import { MarqueeSlide } from '~/components/Slider/MarqueSlide';
 import { CitiesSlider } from '~/components/Slider/Slider';
 import Title from '~/components/Title/Title';
-import { topdata } from '~/constants/data';
+import { topdata, idol } from '~/constants/data';
 import './index.scss';
 const Home = () => {
   return (
@@ -28,14 +28,13 @@ const Home = () => {
         <div className='text-center mt-5'>
           <Title title='Influencers to grow' text='Why do influencers love iConnect?' />
         </div>
-        <div className='row d-flex mt-3 justify-content-center'>
+        <div className='row d-flex mt-3 justify-content-center' data-aos='fade-up'>
           <About
-            img='http://mcvideomd1fr.keeng.net/playnow/images/channel/avatar/20200429/YHIwrx6UKeaeJ3QA.jpg'
-            avg={77}
-            desc='Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum dignissimos reiciendis similique inventore, eaque at praesentium molestias nihil modi, quam delectus corrupti laudantium ...'
-            exp={3}
-            follow={364739}
-            data-aos='fade-up'
+            img={idol.imag}
+            avg={idol.avg}
+            desc={idol.desc}
+            exp={idol.exp}
+            follow={idol.follow}
           />
         </div>
       </div>

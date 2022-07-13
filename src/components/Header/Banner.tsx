@@ -42,7 +42,7 @@ const Banner = () => {
       </div>
       <div className='top-banner-wrapper'>
         <div className='top-banner-info'>
-          <h3 className=''>
+          <h3 className='fs-3'>
             Top Influencer Marketing Software <br /> for Influencers and Brands
           </h3>
           {/* <h2 className='ps-4 logo'>iConnect</h2> */}

@@ -6,14 +6,14 @@ export const menu = [
     child: [],
   },
   {
-    name: 'About',
-    href: '/about',
+    name: 'Top influencers',
+    href: '/top-influencers',
     icon: <i className='fa fa-home'></i>,
     child: [],
   },
   {
-    name: 'Top influencers',
-    href: '/top-influencers',
+    name: 'About',
+    href: '/about',
     icon: <i className='fa fa-home'></i>,
     child: [],
   },

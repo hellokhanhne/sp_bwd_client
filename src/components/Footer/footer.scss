@@ -1,0 +1,8 @@
+.dark {
+  & footer {
+    background-color: #292929;
+    & small {
+      color: #ffffff !important;
+    }
+  }
+}
