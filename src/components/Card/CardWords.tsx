@@ -3,7 +3,7 @@ import './Card.scss';
 const CardWords = ({ desc, name, img }: { desc: string; name: string; img: string }) => {
   return (
     <div className='word-item'>
-      <p className='content'>{desc}</p>
+      <p>{desc}</p>
       <div className='user-info'>
         <div
           className='avatar'

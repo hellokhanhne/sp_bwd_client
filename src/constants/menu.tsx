@@ -12,6 +12,12 @@ export const menu = [
     child: [],
   },
   {
+    name: 'Tools',
+    href: '/tools',
+    icon: <i className='fa fa-home'></i>,
+    child: [],
+  },
+  {
     name: 'About',
     href: '/about',
     icon: <i className='fa fa-home'></i>,

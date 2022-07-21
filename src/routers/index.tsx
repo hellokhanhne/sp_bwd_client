@@ -1,6 +1,7 @@
 import About from '~/views/About';
 import Contact from '~/views/Contact/Contact';
 import Home from '~/views/Home';
+import ImageEditor from '~/views/tools/ImageEditor';
 import TopInfluencers from '~/views/TopInfluencers';
 interface iPublicRoute {
   path: string;
@@ -18,6 +19,10 @@ export const publicRoutes: iPublicRoute[] = [
   {
     path: '/contact',
     element: <Contact />,
+  },
+  {
+    path: '/tools',
+    element: <ImageEditor />,
   },
   {
     path: '/top-influencers',

@@ -1,23 +1,32 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom';
-import 'bootstrap/dist/css/bootstrap.min.css';
-
 import App from './App';
-import './styles/app.scss';
+import ReactDOM from 'react-dom';
 
-// styles
+import './styles/app.scss';
 import './index.css';
 import { NextUIProvider } from '@nextui-org/react';
-import ThemeProvider from './context/ThemeContext';
-ReactDOM.createRoot(document.getElementById('root')!).render(
+import ThemeProviders from './context/ThemeContext';
+import { BrowserRouter } from 'react-router-dom';
+
+import { Provider } from 'react-redux';
+import { ThemeProvider } from 'styled-components';
+import { store } from './store/store';
+import { theme } from './themes/theme';
+import GlobalStyles from './themes/GlobalStyles';
+ReactDOM.render(
   // <React.StrictMode>
   <BrowserRouter>
-    <ThemeProvider>
+    <ThemeProviders>
       <NextUIProvider>
-        <App />
+        <Provider store={store}>
+          <ThemeProvider theme={theme}>
+            <GlobalStyles />
+            <App />
+          </ThemeProvider>
+        </Provider>
       </NextUIProvider>
-    </ThemeProvider>
+    </ThemeProviders>
   </BrowserRouter>,
+  document.getElementById('root')
   // </React.StrictMode>
 );

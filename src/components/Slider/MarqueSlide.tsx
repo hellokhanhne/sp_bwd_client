@@ -21,7 +21,7 @@ export const MarqueeSlide = () => {
         onFinish={() => {}}
       >
         {influencerstop.map((item, index) => (
-          <Scale scale={1} key={`marquee-example-playground-${index}`}>
+          <Scale scale={1} key={`marquee-${index}`}>
             <CardWords desc={item.decs} img={item.img} name={item.name} />
           </Scale>
         ))}
