@@ -6,7 +6,7 @@ export const menu = [
     child: [],
   },
   {
-    name: 'Top influencers',
+    name: 'Influencers',
     href: '/top-influencers',
     icon: <i className='fa fa-home'></i>,
     child: [],

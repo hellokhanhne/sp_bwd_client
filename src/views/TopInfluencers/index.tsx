@@ -5,7 +5,7 @@ import React, { useEffect, useState } from 'react';
 import { IconSlide } from '~/components/Slider/IconSlider';
 import users from '../../constants/response.json';
 import './index.scss';
-import Load from '~/components/Loading/Loading';
+import Loader from '~/components/atoms/LoaderRender/Loader';
 
 const columns = [
   {
@@ -50,7 +50,12 @@ export default function TopInfluencers() {
     for (let i = 0; i < 10; i++) {
       setData((pre) => [...pre, users[i]]);
     }
-    setLoading(false);
+    const a = setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+    return () => {
+      clearTimeout(a);
+    };
   }, []);
 
   const renderCell = (user: any, columnKey: any) => {
@@ -106,7 +111,7 @@ export default function TopInfluencers() {
     }
   };
   if (loading) {
-    return <Load />;
+    return <Loader />;
   } else
     return (
       <div className='container-fluid py-5 influencers'>

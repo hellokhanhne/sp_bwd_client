@@ -4,7 +4,7 @@ import { publicRoutes } from './routers';
 import 'aos/dist/aos.css';
 import AOS from 'aos';
 import { useEffect } from 'react';
-import Loading from './components/Loading/Loading';
+import Loader from './components/atoms/LoaderRender/Loader';
 function App() {
   useEffect(() => {
     AOS.init({ duration: 3000 });
@@ -13,7 +13,7 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path='/loading' element={<Loading />} />
+        <Route path='/loading' element={<Loader />} />
         {publicRoutes.map((item, i) => (
           <Route
             key={i}
