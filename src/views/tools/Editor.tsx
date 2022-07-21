@@ -20,7 +20,7 @@ const Container = styled.div`
 const Wrapper = styled.div`
   width: 100%;
   display: flex;
-  height: 500px;
+  height: 400px;
 `;
 
 const StyledScene = styled(Scene)`
