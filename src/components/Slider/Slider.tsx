@@ -95,13 +95,13 @@ export class CitiesSlider extends React.Component {
               className={`slider__slide ${activeSlide === index ? 's--active' : ''} ${
                 prevSlide === index ? 's--prev' : ''
               }`}
-              key={slide.city}
+              key={index}
             >
               <div className='slider__slide-content'>
                 <h3 className='slider__slide-subheading'>{slide.country || slide.city}</h3>
                 <h2 className='slider__slide-heading'>
                   {slide.city.split('').map((l: string) => (
-                    <span>{l}</span>
+                    <span key={index}>{l}</span>
                   ))}
                 </h2>
                 <p className='slider__slide-readmore'>read more</p>
@@ -119,11 +119,11 @@ export class CitiesSlider extends React.Component {
             </div>
           ))}
         </div>
-        <div className='slider__control' onClick={() => this.changeSlides(-1)} />
+        {/* <div className='slider__control' onClick={() => this.changeSlides(-1)} />
         <div
           className='slider__control slider__control--right'
           onClick={() => this.changeSlides(1)}
-        />
+        /> */}
       </div>
     );
   }

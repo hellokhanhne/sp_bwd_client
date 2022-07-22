@@ -38,8 +38,12 @@ export const IconSlide = () => {
         velocity={50}
         scatterRandomly={false}
         resetAfterTries={10}
-        onInit={() => {}}
-        onFinish={() => {}}
+        onInit={() => {
+          console.log('init');
+        }}
+        onFinish={() => {
+          console.log('finish');
+        }}
       >
         {listicon.map((item, index) => (
           <Scale scale={iconsMeta[index].scale} key={`marquee-example-playground-${index}`}>

@@ -3,7 +3,7 @@ import { menu } from '~/constants';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 import './index.scss';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Switch } from '@nextui-org/react';
 import ItemMenu from './ItemMenu';
 import LoginModal from '../AuthComponent/LoginModal';
@@ -24,10 +24,10 @@ const Header = ({ setMode }: IHeaderProps) => {
     <>
       <nav className='navbar navbar-expand-md py-1 shadow'>
         <div className='container'>
-          <a href='#' className='navbar-brand d-flex align-items-center'>
+          <Link to='/' className='navbar-brand d-flex align-items-center'>
             {' '}
             <strong className='logo fs-2'>iConnect</strong>
-          </a>
+          </Link>
           <button
             type='button'
             data-toggle='collapse'
@@ -55,7 +55,7 @@ const Header = ({ setMode }: IHeaderProps) => {
                 active={location.pathname === '/login' ? true : false}
               /> */}
               <li className='nav-item'>
-                <a className='nav-link '>
+                <span className='nav-link '>
                   <Switch
                     onChange={setMode}
                     className='mt-2'
@@ -64,7 +64,7 @@ const Header = ({ setMode }: IHeaderProps) => {
                     iconOn={<FontAwesomeIcon icon={faSun} />}
                     iconOff={<FontAwesomeIcon icon={faMoon} />}
                   />
-                </a>
+                </span>
               </li>
               <li className='nav-item'>
                 <div className='h-100 d-flex justify-content-center align-items-center ms-3'>

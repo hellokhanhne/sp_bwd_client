@@ -5,7 +5,7 @@ import { useTypedSelector } from '../../store/selector';
 
 import { useDropDownMenu } from '../../hooks/useDropdownMenu';
 
-import WithButton from '../../hoc/withButton';
+import WithButton from '../../hoc/WithButton';
 
 import Line from './Line';
 import Icon from './Icon';

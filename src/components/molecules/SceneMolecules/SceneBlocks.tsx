@@ -1,7 +1,7 @@
 import React, { FC, SyntheticEvent } from 'react';
 import styled from 'styled-components';
 
-import WithButton from '../../../hoc/withButton';
+import WithButton from '../../../hoc/WithButton';
 
 import Block, { BlocksArray } from '../../atoms/Block';
 

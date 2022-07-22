@@ -4,7 +4,7 @@ import { useTypedSelector } from '../../store/selector';
 import { useDispatch } from 'react-redux';
 import { types } from '../../store/actions/types';
 
-import WithButton from '../../hoc/withButton';
+import WithButton from '../../hoc/WithButton';
 
 import Icon from '../atoms/Icon';
 import Time from '../atoms/Time';

@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { types } from '../../store/actions/types';
 import { useTypedSelector } from '../../store/selector';
 
-import WithButton from '../../hoc/withButton';
+import WithButton from '../../hoc/WithButton';
 
 import ChangeNameModal from '../atoms/ModalTypes/ChangeNameModal';
 import ChangeItemColorModal from '../atoms/ModalTypes/ChangeItemColorModal';

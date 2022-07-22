@@ -5,8 +5,8 @@ import { useDispatch } from 'react-redux';
 import { types } from '../../store/actions/types';
 import { item } from '../../types/timeline'; //eslint-disable-line
 import domtoimage from 'dom-to-image';
-import axios from 'axios';
-import download from 'downloadjs';
+// import axios from 'axios';
+// import download from 'downloadjs';
 
 import getRotationAngle from '../../helpers/getRotationAngle';
 import imageSizeAfterRotation from '../../helpers/imageSizeAfterRotation';
@@ -144,52 +144,53 @@ const Controls: FC = () => {
       formData.append('videoEditor', JSON.stringify(ffmpegData));
 
       if (formData.has('images')) {
-        try {
-          const result = await axios({
-            url: 'upload-video',
-            method: 'post',
-            data: formData,
-            headers: {
-              'Content-Type': 'multipart/form-data',
-            },
-            responseType: 'blob',
-            onUploadProgress: (progress) => {
-              const { total, loaded } = progress;
-              const totalSize = total / 1000000;
-              const loadedSize = loaded / 1000000;
-              const percentage = (loadedSize / totalSize) * 100;
-              if (percentage !== 100) {
-                dispatch({
-                  type: types.SET_RENDER_MESSAGE,
-                  payload: `Uploading video: ${Math.floor(percentage)}%`,
-                });
-              } else {
-                dispatch({
-                  type: types.SET_RENDER_MESSAGE,
-                  payload: `Rendering video! Please wait...`,
-                });
-              }
-            },
-          });
+        console.log('video render');
+        // try {
+        //   const result = await axios({
+        //     url: 'upload-video',
+        //     method: 'post',
+        //     data: formData,
+        //     headers: {
+        //       'Content-Type': 'multipart/form-data',
+        //     },
+        //     responseType: 'blob',
+        //     onUploadProgress: (progress) => {
+        //       const { total, loaded } = progress;
+        //       const totalSize = total / 1000000;
+        //       const loadedSize = loaded / 1000000;
+        //       const percentage = (loadedSize / totalSize) * 100;
+        //       if (percentage !== 100) {
+        //         dispatch({
+        //           type: types.SET_RENDER_MESSAGE,
+        //           payload: `Uploading video: ${Math.floor(percentage)}%`,
+        //         });
+        //       } else {
+        //         dispatch({
+        //           type: types.SET_RENDER_MESSAGE,
+        //           payload: `Rendering video! Please wait...`,
+        //         });
+        //       }
+        //     },
+        //   });
 
-          if (result) {
-            dispatch({
-              type: types.SET_EXPORT_STATE,
-              payload: false,
-            });
-            dispatch({
-              type: types.SET_RENDER_STATUS,
-              payload: false,
-            });
-            dispatch({
-              type: types.SET_RENDER_MESSAGE,
-              payload: 'Done!',
-            });
-            download(result.data, 'video.mp4');
-          }
-        } catch (err) {
-          throw err;
-        }
+        //   if (result) {
+        //     dispatch({
+        //       type: types.SET_EXPORT_STATE,
+        //       payload: false,
+        //     });
+        //     dispatch({
+        //       type: types.SET_RENDER_STATUS,
+        //       payload: false,
+        //     });
+        //     dispatch({
+        //       type: types.SET_RENDER_MESSAGE,
+        //       payload: 'Done!',
+        //     });
+        //     download(result.data, 'video.mp4');
+        //   }
+        // } catch (err) {
+        //   throw err;
+        // }
       } else {
         dispatch({
           type: types.SET_EXPORT_STATE,

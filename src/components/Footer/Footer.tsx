@@ -39,13 +39,13 @@ const Footer = () => {
 
               <ul className='list-unstyled mb-0' style={{ alignItems: 'flex-start' }}>
                 <li className='float-left'>
-                  <a href='#'>Influencer</a>
+                  <p>Influencer</p>
                 </li>
                 <li className='float-left'>
-                  <a href='#'>About</a>
+                  <p>About</p>
                 </li>
                 <li>
-                  <a href='#'>Contact</a>
+                  <p>Contact</p>
                 </li>
               </ul>
             </div>
@@ -54,13 +54,13 @@ const Footer = () => {
 
               <ul className='list-unstyled mb-0'>
                 <li>
-                  <a href='#'>0345648638</a>
+                  <p>0345648638</p>
                 </li>
                 <li>
-                  <a href='#'>hoanle396@gmail.com</a>
+                  <p>hoanle396@gmail.com</p>
                 </li>
                 <li>
-                  <a href='#'>Facebook</a>
+                  <p>Facebook</p>
                 </li>
               </ul>
             </div>
@@ -69,19 +69,19 @@ const Footer = () => {
 
               <ul className='list-unstyled mb-0'>
                 <li>
-                  <a href='#' className=' '>
+                  <p className=' '>
                     <i className='fab fa-instagram'></i> Instagram
-                  </a>
+                  </p>
                 </li>
                 <li>
-                  <a href='#'>
+                  <p>
                     <i className='fab fa-youtube'></i> Youtube
-                  </a>
+                  </p>
                 </li>
                 <li>
-                  <a href='#'>
+                  <p>
                     <i className='fa fa-mail-forward'></i> Email
-                  </a>
+                  </p>
                 </li>
               </ul>
             </div>

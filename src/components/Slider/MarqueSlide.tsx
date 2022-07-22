@@ -17,8 +17,12 @@ export const MarqueeSlide = () => {
         velocity={50}
         scatterRandomly={false}
         resetAfterTries={100}
-        onInit={() => {}}
-        onFinish={() => {}}
+        onInit={() => {
+          console.log('init');
+        }}
+        onFinish={() => {
+          console.log('finish');
+        }}
       >
         {influencerstop.map((item, index) => (
           <Scale scale={1} key={`marquee-${index}`}>

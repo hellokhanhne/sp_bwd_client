@@ -123,47 +123,45 @@ const ImageType = styled.img`
   width: 100%;
 `;
 
-const Block = forwardRef(
-  (props: BlockProps, ref?: React.Ref<HTMLDivElement | HTMLImageElement>) => {
-    const {
-      color = '#fff',
-      type,
-      textAlign,
-      justifyContent,
-      fontFamily = 'Lato',
-      textColor = '#fff',
-      border,
-      text,
-      imageSrc,
-      opacity,
-      ...rest
-    } = props;
-    switch (type) {
-      case 'text':
-        return (
-          <TextType
-            ref={ref}
-            border={border}
-            color={color}
-            textAlign={textAlign}
-            fontFamily={fontFamily}
-            textColor={textColor}
-            justifyContent={justifyContent}
-            {...rest}
-          >
-            <TextElement>{text}</TextElement>
-          </TextType>
-        );
-      case 'image':
-        return (
-          <ImageWrapper {...rest}>
-            <ImageType src={imageSrc} />
-          </ImageWrapper>
-        );
-      default:
-        return <BlockType ref={ref} opacity={opacity} type={type} color={color} {...rest} />;
-    }
-  },
-);
+const Block = (props: BlockProps, ref?: React.Ref<HTMLDivElement | HTMLImageElement>) => {
+  const {
+    color = '#fff',
+    type,
+    textAlign,
+    justifyContent,
+    fontFamily = 'Lato',
+    textColor = '#fff',
+    border,
+    text,
+    imageSrc,
+    opacity,
+    ...rest
+  } = props;
+  switch (type) {
+    case 'text':
+      return (
+        <TextType
+          ref={ref}
+          border={border}
+          color={color}
+          textAlign={textAlign}
+          fontFamily={fontFamily}
+          textColor={textColor}
+          justifyContent={justifyContent}
+          {...rest}
+        >
+          <TextElement>{text}</TextElement>
+        </TextType>
+      );
+    case 'image':
+      return (
+        <ImageWrapper {...rest}>
+          <ImageType src={imageSrc} />
+        </ImageWrapper>
+      );
+    default:
+      return <BlockType ref={ref} opacity={opacity} type={type} color={color} {...rest} />;
+  }
+};
 
-export default Block;
+export default forwardRef(Block);

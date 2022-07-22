@@ -2,7 +2,7 @@ import React, { FC, MouseEvent } from 'react';
 import styled from 'styled-components';
 import { theme } from '../../themes/theme';
 
-import WithButton from '../../hoc/withButton';
+import WithButton from '../../hoc/WithButton';
 
 import TrackText from '../atoms/TrackText';
 import Icon from '../atoms/Icon';

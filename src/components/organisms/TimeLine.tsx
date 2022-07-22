@@ -138,7 +138,7 @@ const TimeLine: FC = () => {
     window.addEventListener('resize', runTimeout);
 
     return () => window.removeEventListener('resize', runTimeout);
-    }, [trackList, dispatch, videoData.videoLength]); //eslint-disable-line
+  }, [trackList, dispatch, videoData.videoLength]); //eslint-disable-line
 
   useEffect(() => {
     const handleOutsideClick = () => {

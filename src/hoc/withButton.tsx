@@ -9,7 +9,7 @@ const Button = styled.button`
   padding: 0;
 `;
 
-export const withButton = <P extends object>(Component: React.ComponentType<P>) => {
+export const WithButton = <P extends object>(Component: React.ComponentType<P>,) => {
   return (props: any) => {
     const { onClick } = props;
     return (
@@ -20,4 +20,4 @@ export const withButton = <P extends object>(Component: React.ComponentType<P>) 
   };
 };
 
-export default withButton;
+export default WithButton;

@@ -1,4 +1,4 @@
-import  { FC, useState, useEffect, useRef } from 'react';
+import { FC, useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import Moveable from 'react-moveable';
 import { useTypedSelector } from '../../store/selector';
@@ -73,7 +73,8 @@ const Item: FC<ItemProps> = ({
   const videoRef = useTypedSelector((state) => state.video.videoRef.videoRef);
   const [target, setTarget] = useState<HTMLElement>();
   const [active, setActive] = useState(true);
-    const [frame, _] = useState({ //eslint-disable-line
+  const [frame, setFrame] = useState({
+    //eslint-disable-line
     translate: [0, 0],
     scale: [1, 1],
     rotate: 0,
@@ -124,7 +125,7 @@ const Item: FC<ItemProps> = ({
       const textRect = target.children[0].getBoundingClientRect();
       updateOptionsTextPosition(textRect.x, textRect.y);
     }
-    }, [fontSize, target, type]); //eslint-disable-line
+  }, [fontSize, target, type]); //eslint-disable-line
 
   useEffect(() => {
     if (active && type === 'image') {

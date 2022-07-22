@@ -5,7 +5,7 @@ import InfiniteScroll from 'react-infinite-scroll-component';
 
 import { usePexelApi } from '../../../hooks/usePexelApi';
 
-import WithButton from '../../../hoc/withButton';
+import WithButton from '../../../hoc/WithButton';
 
 import Icon from '../../atoms/Icon';
 import Loader from '../../atoms/Loader/Loader';
@@ -142,17 +142,20 @@ const SceneMedia: FC<SceneMediaProps> = ({ active, onItemClick }) => {
               marginTop: '15px',
             }}
           >
-            {images.map((item, key) => {
-              return (
-                <StyledImageButton
-                  onClick={(e: SyntheticEvent<HTMLDivElement>) =>
-                    onItemClick(e, 'image', 'image', item.originalImage)
-                  }
-                  key={key}
-                  src={item.landscapeImage}
-                />
-              );
-            })}
+            <>
+              {' '}
+              {images.map((item, key) => {
+                return (
+                  <StyledImageButton
+                    onClick={(e: SyntheticEvent<HTMLDivElement>) =>
+                      onItemClick(e, 'image', 'image', item.originalImage)
+                    }
+                    key={key}
+                    src={item.landscapeImage}
+                  />
+                );
+              })}
+            </>
           </Masonry>
         </InfiniteScroll>
       </ImagesWrapper>

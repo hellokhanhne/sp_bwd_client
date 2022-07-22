@@ -50,7 +50,7 @@ const VideoCore: FC<VideoCoreProps> = ({ handleTick, ...props }) => {
   useEffect(() => {
     videoRef.current.currentTime = videoData.duration;
     handleTick(videoRef.current.currentTime, videoRef.current);
-    }, [videoData.duration]); //eslint-disable-line
+  }, [videoData.duration]); //eslint-disable-line
 
   useEffect(() => {
     videoData.play ? videoRef.current.play() : videoRef.current.pause();
