@@ -1,163 +1,196 @@
 import { timeLine, item } from '../../types/timeline';
 import { types } from './types';
 
-export type timeLineActions = createNewTrackAction
-    | deleteTrackAction
-    | updateTrackNameAction
-    | moveTrackAction
-    | addItemToTrackAction
-    | deleteItemFromTrackAction
-    | updateItemTimeAction
-    | setTimelineRefAction
-    | updateItemTrackPositionAction
-    | updateItemTrackSizeAction
-    | updateItemPositionAction
-    | updateItemColorAction
-    | updateItemOpacityAction
-    | updateItemRatioAction
-    | updateTextOptionsAction;
+export type timeLineActions =
+  | createNewTrackAction
+  | deleteTrackAction
+  | updateTrackNameAction
+  | moveTrackAction
+  | addItemToTrackAction
+  | deleteItemFromTrackAction
+  | updateItemTimeAction
+  | setTimelineRefAction
+  | updateItemTrackPositionAction
+  | updateItemTrackSizeAction
+  | updateItemPositionAction
+  | updateItemColorAction
+  | updateItemOpacityAction
+  | updateItemRatioAction
+  | updateTextOptionsAction;
 
 interface createNewTrackAction {
-    type: types.CREATE_NEW_TRACK,
-    payload: timeLine
+  type: types.CREATE_NEW_TRACK;
+  payload: timeLine;
 }
 export const createNewTrack = (value: timeLine): createNewTrackAction => ({
-    type: types.CREATE_NEW_TRACK,
-    payload: value
+  type: types.CREATE_NEW_TRACK,
+  payload: value,
 });
 
 interface deleteTrackAction {
-    type: types.DELETE_TRACK,
-    payload: string;
+  type: types.DELETE_TRACK;
+  payload: string;
 }
 export const deleteTrack = (value: string): deleteTrackAction => ({
-    type: types.DELETE_TRACK,
-    payload: value
+  type: types.DELETE_TRACK,
+  payload: value,
 });
 
 interface moveTrackAction {
-    type: types.MOVE_TRACK
-    payload: {name: string, type: string, index: number}
+  type: types.MOVE_TRACK;
+  payload: { name: string; type: string; index: number };
 }
-export const moveTrack = (value: {name: string, type: string, index: number}): moveTrackAction => ({
-    type: types.MOVE_TRACK,
-    payload: value
+export const moveTrack = (value: {
+  name: string;
+  type: string;
+  index: number;
+}): moveTrackAction => ({
+  type: types.MOVE_TRACK,
+  payload: value,
 });
 
 interface updateTrackNameAction {
-    type: types.UPDATE_TRACK_NAME,
-    payload: { name: string, newName: string }
+  type: types.UPDATE_TRACK_NAME;
+  payload: { name: string; newName: string };
 }
-export const updateTrackName = (value: { name: string, newName: string }): updateTrackNameAction => ({
-    type: types.UPDATE_TRACK_NAME,
-    payload: value
+export const updateTrackName = (value: {
+  name: string;
+  newName: string;
+}): updateTrackNameAction => ({
+  type: types.UPDATE_TRACK_NAME,
+  payload: value,
 });
 
 interface addItemToTrackAction {
-    type: types.ADD_ITEM_TO_TRACK,
-    payload: {name: string; item: item}
+  type: types.ADD_ITEM_TO_TRACK;
+  payload: { name: string; item: item };
 }
-export const addItemToTrack = (value: {name: string; item: item}): addItemToTrackAction => ({
-    type: types.ADD_ITEM_TO_TRACK,
-    payload: value
+export const addItemToTrack = (value: { name: string; item: item }): addItemToTrackAction => ({
+  type: types.ADD_ITEM_TO_TRACK,
+  payload: value,
 });
 
 interface deleteItemFromTrackAction {
-    type: types.DELETE_ITEM_FROM_TRACK,
-    payload: string;
+  type: types.DELETE_ITEM_FROM_TRACK;
+  payload: string;
 }
 export const deleteItemFromTrack = (value: string): deleteItemFromTrackAction => ({
-    type: types.DELETE_ITEM_FROM_TRACK,
-    payload: value
+  type: types.DELETE_ITEM_FROM_TRACK,
+  payload: value,
 });
 
 interface updateItemTimeAction {
-    type: types.UPDATE_ITEM_TRACK,
-    payload: {name: string, start: number; end: number}
+  type: types.UPDATE_ITEM_TRACK;
+  payload: { name: string; start: number; end: number };
 }
-export const updateItemTime = (value: {name: string, start: number; end: number}): updateItemTimeAction => ({
-    type: types.UPDATE_ITEM_TRACK,
-    payload: value
+export const updateItemTime = (value: {
+  name: string;
+  start: number;
+  end: number;
+}): updateItemTimeAction => ({
+  type: types.UPDATE_ITEM_TRACK,
+  payload: value,
 });
 
 interface setTimelineRefAction {
-    type: types.SET_TIMELINE_REF,
-    payload: object
+  type: types.SET_TIMELINE_REF;
+  payload: object;
 }
 export const setTimelineRef = (value: object): setTimelineRefAction => ({
-    type: types.SET_TIMELINE_REF,
-    payload: value
+  type: types.SET_TIMELINE_REF,
+  payload: value,
 });
 
 interface updateItemTrackPositionAction {
-    type: types.UPDATE_ITEM_TRACK_POSITION,
-    payload: { xPosition: number, start: number, end: number, name: string; }
+  type: types.UPDATE_ITEM_TRACK_POSITION;
+  payload: { xPosition: number; start: number; end: number; name: string };
 }
-export const updateItemTrackPosition = (value: { xPosition: number, start: number, end: number, name: string }): updateItemTrackPositionAction => ({
-    type: types.UPDATE_ITEM_TRACK_POSITION,
-    payload: value
-})
+export const updateItemTrackPosition = (value: {
+  xPosition: number;
+  start: number;
+  end: number;
+  name: string;
+}): updateItemTrackPositionAction => ({
+  type: types.UPDATE_ITEM_TRACK_POSITION,
+  payload: value,
+});
 
 interface updateItemTrackSizeAction {
-    type: types.UPDATE_ITEM_TRACK_SIZE,
-    payload: {name: string, width: string, start: number, end: number, xPosition: number};
+  type: types.UPDATE_ITEM_TRACK_SIZE;
+  payload: { name: string; width: string; start: number; end: number; xPosition: number };
 }
-export const updateItemTrackSize = (value: {name: string, width: string, start: number, end: number, xPosition: number}): updateItemTrackSizeAction => ({
-    type: types.UPDATE_ITEM_TRACK_SIZE,
-    payload: value
-})
+export const updateItemTrackSize = (value: {
+  name: string;
+  width: string;
+  start: number;
+  end: number;
+  xPosition: number;
+}): updateItemTrackSizeAction => ({
+  type: types.UPDATE_ITEM_TRACK_SIZE,
+  payload: value,
+});
 
 interface updateItemPositionAction {
-    type: types.UPDATE_ITEM_POSITION,
-    payload: { name: string, x: number, y: number }
+  type: types.UPDATE_ITEM_POSITION;
+  payload: { name: string; x: number; y: number };
 }
-export const updateItemPosition = (value: { name: string, x: number, y: number }): updateItemPositionAction => ({
-    type: types.UPDATE_ITEM_POSITION,
-    payload: value 
-})
+export const updateItemPosition = (value: {
+  name: string;
+  x: number;
+  y: number;
+}): updateItemPositionAction => ({
+  type: types.UPDATE_ITEM_POSITION,
+  payload: value,
+});
 
 interface updateItemColorAction {
-    type: types.UPDATE_ITEM_COLOR,
-    payload: { name: string, color: string }
+  type: types.UPDATE_ITEM_COLOR;
+  payload: { name: string; color: string };
 }
-export const updateItemColor = (value: { name: string, color: string }): updateItemColorAction => ({
-    type: types.UPDATE_ITEM_COLOR,
-    payload: value 
-})
+export const updateItemColor = (value: { name: string; color: string }): updateItemColorAction => ({
+  type: types.UPDATE_ITEM_COLOR,
+  payload: value,
+});
 
 interface updateItemOpacityAction {
-    type: types.UPDATE_ITEM_OPACITY,
-    payload: { name: string, opacity: number }
+  type: types.UPDATE_ITEM_OPACITY;
+  payload: { name: string; opacity: number };
 }
-export const updateItemOpacity = (value: { name: string, opacity: number }): updateItemOpacityAction => ({
-    type: types.UPDATE_ITEM_OPACITY,
-    payload: value
+export const updateItemOpacity = (value: {
+  name: string;
+  opacity: number;
+}): updateItemOpacityAction => ({
+  type: types.UPDATE_ITEM_OPACITY,
+  payload: value,
 });
 
 interface updateItemRatioAction {
-    type: types.UPDATE_ITEM_RATIO,
-    payload: { name: string, keepRatio: boolean }
+  type: types.UPDATE_ITEM_RATIO;
+  payload: { name: string; keepRatio: boolean };
 }
-export const updateItemRatio = (value: { name: string, keepRatio: boolean }): updateItemRatioAction => ({
-    type: types.UPDATE_ITEM_RATIO,
-    payload: value
+export const updateItemRatio = (value: {
+  name: string;
+  keepRatio: boolean;
+}): updateItemRatioAction => ({
+  type: types.UPDATE_ITEM_RATIO,
+  payload: value,
 });
 
 interface TextOptions {
-    name: string;
-    textAlign: string | null;
-    fontSize: string | null;
-    fontFamily: string | null;
-    text: string | null;
-    textColor: string | null;
-    x: number | null;
-    y: number | null;
+  name: string;
+  textAlign: string | null;
+  fontSize: string | null;
+  fontFamily: string | null;
+  text: string | null;
+  textColor: string | null;
+  x: number | null;
+  y: number | null;
 }
 interface updateTextOptionsAction {
-    type: types.UPDATE_TEXT_OPTIONS,
-    payload: TextOptions
+  type: types.UPDATE_TEXT_OPTIONS;
+  payload: TextOptions;
 }
 export const updateTextOptions = (value: TextOptions): updateTextOptionsAction => ({
-    type: types.UPDATE_TEXT_OPTIONS,
-    payload: value
-})
+  type: types.UPDATE_TEXT_OPTIONS,
+  payload: value,
+});

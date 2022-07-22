@@ -6,17 +6,17 @@ import exportReducer, { exportState } from './exportReducer';
 import renderReducer, { RenderState } from './renderReducer';
 
 export default combineReducers({
-    video: videoReducer,
-    timeline: timeLineReducer,
-    modal: modalReducer,
-    export: exportReducer,
-    render: renderReducer
-})
+  video: videoReducer,
+  timeline: timeLineReducer,
+  modal: modalReducer,
+  export: exportReducer,
+  render: renderReducer,
+});
 
 export type RootState = {
-    video: VideoState,
-    timeline: timeLineState
-    modal: ModalState
-    export: exportState
-    render: RenderState
-}
+  video: VideoState;
+  timeline: timeLineState;
+  modal: ModalState;
+  export: exportState;
+  render: RenderState;
+};

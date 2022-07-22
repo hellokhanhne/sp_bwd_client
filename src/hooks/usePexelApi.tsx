@@ -27,9 +27,9 @@ export const usePexelApi = (query: string) => {
           },
         });
 
-        let newImages: imagesState[] = [];
+        const newImages: imagesState[] = [];
 
-        for (let key in result.data.photos) {
+        for (const key in result.data.photos) {
           const photo = result.data.photos[key];
           const imageObject: imagesState = {
             photographer: photo.photographer,

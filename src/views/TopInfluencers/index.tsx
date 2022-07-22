@@ -43,7 +43,7 @@ interface dataI {
   key: number;
 }
 export default function TopInfluencers() {
-  let datainit: dataI[] = [];
+  const datainit: dataI[] = [];
   const [data, setData] = useState(datainit);
   const [loading, setLoading] = useState(true);
   useEffect(() => {

@@ -6,66 +6,84 @@ import { timeLine } from '../../types/timeline';
 import Item from './Item';
 
 interface VideoItemsProps {
-    [x: string]: any;
+  [x: string]: any;
 }
 
 interface Bounds {
-    left: number;
-    top: number;
-    right: number;
-    bottom: number;
+  left: number;
+  top: number;
+  right: number;
+  bottom: number;
 }
 
 const Container = styled.div`
-    position: relative;
-`
+  position: relative;
+`;
 
-const VideoItems: FC<VideoItemsProps> = ({...props}) => {
-    const videoData = useTypedSelector(state => state.video.videoData);
-    const timelineItems = useTypedSelector(state => state.timeline.timeline);
-    const [bounds, setBounds] = useState<Bounds>()
-    const [timelineItemsClone, setTimelineItemsClone] = useState<timeLine[]>();
-    const containerRef = useRef<HTMLDivElement>(null);
+const VideoItems: FC<VideoItemsProps> = ({ ...props }) => {
+  const videoData = useTypedSelector((state) => state.video.videoData);
+  const timelineItems = useTypedSelector((state) => state.timeline.timeline);
+  const [bounds, setBounds] = useState<Bounds>();
+  const [timelineItemsClone, setTimelineItemsClone] = useState<timeLine[]>();
+  const containerRef = useRef<HTMLDivElement>(null);
 
-    useEffect(() => {
-        if (containerRef.current) {
-            containerRef.current.style.width = `${videoData.width}px`;
-            containerRef.current.style.height = `${videoData.height}px`;
-        }
-    }, [containerRef, videoData.width, videoData.height])
+  useEffect(() => {
+    if (containerRef.current) {
+      containerRef.current.style.width = `${videoData.width}px`;
+      containerRef.current.style.height = `${videoData.height}px`;
+    }
+  }, [containerRef, videoData.width, videoData.height]);
 
-    useEffect(() => {
-        if (containerRef.current) {
-            const containerPadding = Number(window.getComputedStyle(containerRef.current, null).getPropertyValue('padding').replace('px', ''));
-            setBounds({
-                "left":  containerPadding,
-                "top": containerPadding,
-                "right": containerRef.current.clientWidth - containerPadding,
-                "bottom": containerRef.current.clientHeight - containerPadding
-            });
-        }
-    }, [containerRef, videoData.width])
+  useEffect(() => {
+    if (containerRef.current) {
+      const containerPadding = Number(
+        window
+          .getComputedStyle(containerRef.current, null)
+          .getPropertyValue('padding')
+          .replace('px', ''),
+      );
+      setBounds({
+        left: containerPadding,
+        top: containerPadding,
+        right: containerRef.current.clientWidth - containerPadding,
+        bottom: containerRef.current.clientHeight - containerPadding,
+      });
+    }
+  }, [containerRef, videoData.width]);
 
-    useEffect(() => {
-        if (timelineItems) {
-            setTimelineItemsClone([...timelineItems].reverse());
+  useEffect(() => {
+    if (timelineItems) {
+      setTimelineItemsClone([...timelineItems].reverse());
+    }
+  }, [timelineItems]);
 
-        }
-    }, [timelineItems])
+  return (
+    <Container ref={containerRef} {...props}>
+      {timelineItemsClone &&
+        timelineItemsClone.map((item, key) => {
+          if (item.item) {
+            return (
+              <Item
+                key={item.id}
+                index={key}
+                type={item.item.itemType}
+                keepRatio={item.item.keepRatio}
+                opacity={item.item.opacity}
+                imageSrc={item.item.imageSrc}
+                textOptions={item.item.textOptions}
+                name={item.name}
+                color={item.item.color}
+                selector={item.item.selector}
+                time={item.item.time}
+                bounds={bounds}
+              />
+            );
+          }
 
-    return (
-        <Container ref={containerRef} {...props}>
-            {
-                timelineItemsClone && timelineItemsClone.map((item, key) => {
-                    if (item.item) {
-                        return <Item key={item.id} index={key} type={item.item.itemType} keepRatio={item.item.keepRatio} opacity={item.item.opacity} imageSrc={item.item.imageSrc} textOptions={item.item.textOptions} name={item.name} color={item.item.color} selector={item.item.selector} time={item.item.time} bounds={bounds} />
-                    }
-
-                    return null;
-                })
-            }
-        </Container>
-    )
-}
+          return null;
+        })}
+    </Container>
+  );
+};
 
 export default React.memo(VideoItems);

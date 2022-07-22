@@ -27,6 +27,6 @@ ReactDOM.render(
       </NextUIProvider>
     </ThemeProviders>
   </BrowserRouter>,
-  document.getElementById('root')
+  document.getElementById('root'),
   // </React.StrictMode>
 );
