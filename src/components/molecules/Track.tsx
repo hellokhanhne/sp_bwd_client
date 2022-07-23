@@ -51,7 +51,8 @@ const Track: FC<TrackProps> = ({ name, item, timelineRef, videoLength }) => {
     }
   };
 
-  const handleResizeStop = (e: any, ref: HTMLDivElement, x: number) => {
+  const handleResizeStop = (e: any, ref: HTMLElement, x: number) => {
+    console.log(e);
     if (timelineRef.current) {
       const startTime = (x * videoLength) / timelineRef.current.offsetWidth;
       const endTime =
@@ -112,7 +113,10 @@ const Track: FC<TrackProps> = ({ name, item, timelineRef, videoLength }) => {
             x: item.xPosition,
             y: 0,
           }}
-          onResizeStop={(e, d, ref, delta, position) => handleResizeStop(e, ref, position.x)}
+          onResizeStop={(e, d, ref, delta, position) => {
+            console.log('d',d,'delta',delta)
+            handleResizeStop(e, ref, position.x)
+          }}
           onDragStop={(e, d) => handleDragStop(e, d.x)}
           bounds='parent'
           dragAxis='x'

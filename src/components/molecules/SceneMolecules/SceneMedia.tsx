@@ -137,26 +137,22 @@ const SceneMedia: FC<SceneMediaProps> = ({ active, onItemClick }) => {
           }}
         >
           <Masonry
+            className='masony'
             style={{
               width: '100%',
               marginTop: '15px',
             }}
-          >
-            <>
-              {' '}
-              {images.map((item, key) => {
-                return (
-                  <StyledImageButton
-                    onClick={(e: SyntheticEvent<HTMLDivElement>) =>
-                      onItemClick(e, 'image', 'image', item.originalImage)
-                    }
-                    key={key}
-                    src={item.landscapeImage}
-                  />
-                );
-              })}
-            </>
-          </Masonry>
+          ></Masonry>
+
+          {images.map((item, key) => (
+            <StyledImageButton
+              onClick={(e: SyntheticEvent<HTMLDivElement>) =>
+                onItemClick(e, 'image', 'image', item.originalImage)
+              }
+              key={key}
+              src={item.landscapeImage}
+            />
+          ))}
         </InfiniteScroll>
       </ImagesWrapper>
     </Container>
