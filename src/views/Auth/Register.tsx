@@ -1,8 +1,9 @@
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Button, Card, Input, Row, Spacer, Switch, Text } from '@nextui-org/react';
+import { Button, Card, Input, Spacer, Text } from '@nextui-org/react';
 import React, { useEffect } from 'react';
 import { Mail, Password } from '~/components/icons';
+import Google from '~/components/icons/Google';
 import './register.scss';
 
 const Register = () => {
@@ -31,7 +32,7 @@ const Register = () => {
             }}
           >
             <Card.Header css={{ justifyContent: 'center' }}>
-              <Text h2 className='logo fw-bold'>
+              <Text h2 className='logo fw-bold pb-1'>
                 Register
               </Text>
             </Card.Header>
@@ -72,19 +73,13 @@ const Register = () => {
                 fullWidth
                 color='primary'
                 size='lg'
-                placeholder='Password'
+                placeholder='Password comfrim'
                 contentLeft={<Password fill='currentColor' />}
               />
-              <Spacer y={1} />
-              <Row justify='space-between'>
-                <Text>Influencer </Text>
-                <Switch size='sm'></Switch>
-                <Text>Brands </Text>
-              </Row>
             </Card.Body>
             <Card.Footer css={{ flexDirection: 'column' }}>
               <Button rounded bordered ghost style={{ width: '70%' }}>
-                Register
+                Sign Up
               </Button>
               <hr className='hr-text' data-content='OR' style={{ width: '50%' }} />
               <Button
@@ -92,7 +87,7 @@ const Register = () => {
                 bordered
                 ghost
                 color='primary'
-                icon={<FontAwesomeIcon icon={faUser} />}
+                icon={<Google/>}
                 style={{ width: '70%' }}
               >
                 Continue with google
@@ -100,8 +95,8 @@ const Register = () => {
             </Card.Footer>
           </Card>
         </div>
-        <div className='col-12 mt-5 ' style={{ position: 'absolute' }}>
-          <div className='left d-flex justify-content-end pt-5' id='threeEarth'></div>
+        <div className='col-12 mt-5 pt-5' style={{ position: 'absolute' }}>
+          <div className='left d-flex justify-content-end ' id='threeEarth'></div>
         </div>
       </div>
     </div>
