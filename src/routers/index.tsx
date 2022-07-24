@@ -1,4 +1,5 @@
 import About from '~/views/About';
+import Register from '~/views/Auth/Register';
 import Contact from '~/views/Contact/Contact';
 import Home from '~/views/Home';
 import ImageEditor from '~/views/tools/ImageEditor';
@@ -27,6 +28,10 @@ export const publicRoutes: iPublicRoute[] = [
   {
     path: '/top-influencers',
     element: <TopInfluencers />,
+  },
+  {
+    path: '/register',
+    element: <Register />,
   },
 ];
 
