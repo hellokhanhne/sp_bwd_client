@@ -11,8 +11,10 @@ const positionStyle = css`
   position: absolute;
   left: 0;
   right: 0;
+  top: 0;
   margin: auto;
   padding: 20px;
+  width: 100%;
 `;
 
 const StyledVideoCore = styled(VideoCore)`
@@ -21,6 +23,7 @@ const StyledVideoCore = styled(VideoCore)`
 
 const StyledVideoCanvas = styled(VideoCanvas)`
   z-index: 1;
+  display: none;
   ${positionStyle};
 `;
 

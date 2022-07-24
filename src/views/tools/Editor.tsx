@@ -20,11 +20,11 @@ const Container = styled.div`
 const Wrapper = styled.div`
   width: 100%;
   display: flex;
-  height: 400px;
+  height: 60vh;
 `;
 
 const StyledScene = styled(Scene)`
-  flex: 1.2;
+  flex: 1;
 `;
 
 const StyledVideo = styled(Video)`
