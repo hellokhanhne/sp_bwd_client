@@ -4,7 +4,7 @@ import img1 from '../../assets/images/about-influencer1.webp';
 import img2 from '../../assets/images/272bd6ae.jpg';
 const About = () => {
   return (
-    <div className='about-sections mb-0 pb-4'>
+    <div className='about-sections mb-0  py-5'>
       <div className='container'>
         <h1 className='fs-1 fst-italic text-uppercase text-center'>About US</h1>
         <br />

@@ -15,7 +15,7 @@ const Home = () => {
         </h3> */}
         <div className='row d-flex justify-content-center'>
           {topdata.map((item, i) => (
-            <div key={i} className='col-12 col-md-4 col-lg-3  mb-4' data-aos='zoom-in-right'>
+            <div key={i} className='col-12 col-md-4 col-lg-3  mb-4'>
               <CardTop
                 cardTitle={item.title}
                 cardSubtitle={item.sub}

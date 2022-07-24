@@ -5,8 +5,8 @@ import { CountUp } from 'use-count-up';
 const CardTop = ({ cardTitle, value, cardSubtitle, color }: any) => (
   <Card
     variant='bordered'
-    className={`shadow `}
-    style={{ borderBottomWidth: 5, borderBottomColor: color }}
+    css={{ borderRadius: '15px', boxShadow: `0px 5px 10px 0px ${color}` ,background:'unset' }}
+    data-aos='zoom-in-right'
   >
     <Card.Header>
       <Text h4 className='font-popin'>
@@ -17,8 +17,8 @@ const CardTop = ({ cardTitle, value, cardSubtitle, color }: any) => (
       <Text h1 color={color} className='fs-2'>
         <CountUp isCounting end={value} duration={3.2} key={value} /> +
       </Text>
-      <Text className='text-muted '>{new Date().toDateString()}</Text>
-      <Text className='text-muted '>{cardSubtitle}</Text>
+      <Text >{new Date().toDateString()}</Text>
+      <Text >{cardSubtitle}</Text>
     </Card.Body>
   </Card>
 );

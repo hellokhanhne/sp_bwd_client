@@ -96,3 +96,8 @@
     opacity: 0;
   }
 }
+.dark {
+  & .loadding {
+    background-color: #292c34;
+  }
+}

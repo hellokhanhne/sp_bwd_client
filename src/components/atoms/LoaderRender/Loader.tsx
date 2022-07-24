@@ -1,9 +1,9 @@
 import React, { FC } from 'react';
-import './Loader.css';
+import './Loader.scss';
 
 const Loader: FC = () => {
   return (
-    <div className='col d-flex justify-content-center' style={{ background: 'transparent' }}>
+    <div className='col d-flex justify-content-center loadding' >
       <div className='sk-folding-cube'>
         <div className='sk-cube1 sk-cube'></div>
         <div className='sk-cube2 sk-cube'></div>

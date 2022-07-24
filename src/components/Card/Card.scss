@@ -47,7 +47,8 @@
   }
 }
 .dark {
-  & p {
+  & p,
+  & h4 {
     color: #fff;
   }
 }

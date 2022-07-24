@@ -14,7 +14,7 @@ export const MarqueeSlide = () => {
     >
       <Marquee
         direction='rtl'
-        velocity={50}
+        velocity={30}
         scatterRandomly={false}
         resetAfterTries={100}
         onInit={() => {

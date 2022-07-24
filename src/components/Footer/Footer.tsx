@@ -5,27 +5,6 @@ const Footer = () => {
     <footer className='text-center'>
       <div className='container p-4'>
         <section className=''>
-          <div className='row d-flex justify-content-center'>
-            <div className='col-auto'>
-              <h3 className='pt-1'>Sign up for our newsletter</h3>
-            </div>
-            <div className='col-md-5 col-12'>
-              <div className='input-group input-group'>
-                <span className='input-group-text' id='inputGroup-sizing-lg'>
-                  Email
-                </span>
-                <input type='text' className='form-control' />
-              </div>
-            </div>
-            <div className='col-auto'>
-              <button type='submit' className='btn btn-md text-uppercase bg-warning mb-4'>
-                Subscribe
-              </button>
-            </div>
-          </div>
-        </section>
-
-        <section className=''>
           <div className='row'>
             <div className='col-lg-3 col-sm-6 mb-4 mb-md-0'>
               <div className='contaiter'>

@@ -11,12 +11,12 @@ export const menu = [
     icon: <i className='fa fa-home'></i>,
     child: [],
   },
-  {
-    name: 'Tools',
-    href: '/tools',
-    icon: <i className='fa fa-home'></i>,
-    child: [],
-  },
+  // {
+  //   name: 'Tools',
+  //   href: '/tools',
+  //   icon: <i className='fa fa-home'></i>,
+  //   child: [],
+  // },
   {
     name: 'About',
     href: '/about',

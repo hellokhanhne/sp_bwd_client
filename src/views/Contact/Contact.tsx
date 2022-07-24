@@ -3,9 +3,8 @@ import React from 'react';
 import './index.scss';
 const Contact = () => {
   return (
-    <div className='contact container-fluid'>
+    <div className='contact container-fluid py-5'>
       <div className='container'>
-        <section className='mb-0 pb-4 pt-2'>
           <h2 className='fs-1 fst-italic fw-bold text-uppercase text-center'>Feed back</h2>
           <p className='text-center w-responsive mx-auto mb-5'>
             Do you have any questions? Please do not hesitate to contact us directly. Our team will
@@ -102,7 +101,6 @@ const Contact = () => {
               </ul>
             </div>
           </div>
-        </section>
       </div>
     </div>
   );
