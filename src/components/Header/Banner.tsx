@@ -53,7 +53,7 @@ const Banner = () => {
           </div>
         </div>
       </div>
-      <div className='left d-flex justify-content-end'></div>
+      <div className='left d-flex justify-content-end' id="threeEarth"></div>
     </div>
   );
 };

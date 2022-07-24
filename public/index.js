@@ -13658,7 +13658,7 @@
 
   const renderer = new THREE.WebGLRenderer({ alpha: true });
   renderer.setSize(window.innerWidth, window.innerHeight);
-  document.querySelector('.slider-banner .left').appendChild(renderer.domElement);
+  document.querySelector('#threeEarth').appendChild(renderer.domElement);
 
   // let controls = new THREE.TrackballControls(camera);
   // controls.noZoom = true;

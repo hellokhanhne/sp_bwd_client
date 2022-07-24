@@ -52,7 +52,7 @@ export default function TopInfluencers() {
     }
     const a = setTimeout(() => {
       setLoading(false);
-    }, 1000);
+    }, 800);
     return () => {
       clearTimeout(a);
     };
