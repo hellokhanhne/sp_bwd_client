@@ -1,3 +1,5 @@
+import { idol5 } from "~/assets";
+
 export const topdata = [
   {
     title: 'Influencers',
@@ -47,7 +49,7 @@ export const influencerstop = [
 ];
 export const idol = {
   desc: 'With the talent of covering popular Chinese songs with a sweet voice and lovely face. This girl with a tik tok ID account has quickly gained many followers and is storming the tik tok community in China.',
-  imag: 'http://mcvideomd1fr.keeng.net/playnow/images/channel/avatar/20200429/YHIwrx6UKeaeJ3QA.jpg',
+  imag: idol5,
   avg: 90,
   exp: 3,
   follow: 9888674,

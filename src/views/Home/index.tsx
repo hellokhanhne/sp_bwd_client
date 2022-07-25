@@ -4,6 +4,7 @@ import { MarqueeSlide } from '~/components/Slider/MarqueSlide';
 import { CitiesSlider } from '~/components/Slider/Slider';
 import Title from '~/components/Title/Title';
 import { topdata, idol } from '~/constants/data';
+import CoverCard from './CoverCard';
 import './index.scss';
 const Home = () => {
   return (
@@ -37,6 +38,7 @@ const Home = () => {
             follow={idol.follow}
           />
         </div>
+          <CoverCard />
       </div>
       <div className='row d-flex justify-content-center mh-100'>
         <MarqueeSlide />
