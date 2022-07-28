@@ -94,7 +94,7 @@ const ImageEditor = () => {
                   />
                 )}{' '}
               </div>
-              {status ? (
+              {status===true ? (
                 <a id='down'>
                   <button className='btn btn-light down-button'>
                     {' '}
