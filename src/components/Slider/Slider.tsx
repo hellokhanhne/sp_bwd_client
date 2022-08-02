@@ -1,9 +1,9 @@
 import React from 'react';
 import './slider.scss';
-import japane from '../../assets/images/guss_languages_japan-1220x732.jpg';
-import korea from '../../assets/images/korea.jpg';
-import america from '../../assets/images/north-america.webp';
-import australia from '../../assets/images/shutterstock.jpg';
+import japane from '~/assets/images/guss_languages_japan-1220x732.jpg';
+import korea from '~/assets/images/korea.jpg';
+import america from '~/assets/images/north-america.webp';
+import australia from '~/assets/images/shutterstock.jpg';
 interface Iprops {
   slides: ISlider[];
 }
