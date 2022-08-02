@@ -1,7 +1,9 @@
 import { Route, Routes } from 'react-router-dom';
 import BaseLayout from './layout/BaseLayout';
 import { publicRoutes } from './routers';
+import { ToastContainer } from 'react-toastify';
 import 'aos/dist/aos.css';
+import 'react-toastify/dist/ReactToastify.min.css';
 import AOS from 'aos';
 import { useEffect } from 'react';
 import Loader from './components/atoms/LoaderRender/Loader';
@@ -26,6 +28,7 @@ function App() {
           />
         ))}
       </Routes>
+      <ToastContainer />
     </>
   );
 }
