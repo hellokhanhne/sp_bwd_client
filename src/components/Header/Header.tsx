@@ -7,6 +7,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { Switch } from '@nextui-org/react';
 import ItemMenu from './ItemMenu';
 import LoginModal from '../AuthComponent/LoginModal';
+import { useSelector } from 'react-redux';
 
 interface IHeaderProps {
   setMode: () => void;
@@ -20,6 +21,7 @@ const Header = ({ setMode }: IHeaderProps) => {
       setChecked(true);
     }
   }, []);
+  const isLogin = useSelector((state: any) => state.auth.islogin);
   return (
     <>
       <nav className='navbar navbar-expand-md py-1 shadow'>
@@ -66,11 +68,18 @@ const Header = ({ setMode }: IHeaderProps) => {
                   />
                 </span>
               </li>
-              <li className='nav-item'>
-                <div className='h-100 d-flex justify-content-center align-items-center ms-3'>
-                  <LoginModal />
-                </div>
-              </li>
+              {isLogin ? <ItemMenu
+                  key={''}
+                  href={"/profile"}
+                  name={"Profile"}
+                  active={location.pathname === "/profile" ? true : false}
+                /> : (
+                <li className='nav-item'>
+                  <div className='h-100 d-flex justify-content-center align-items-center ms-3'>
+                    <LoginModal />
+                  </div>
+                </li>
+              )}
             </ul>
           </div>
         </div>

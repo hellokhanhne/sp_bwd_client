@@ -5,63 +5,80 @@ import { ThemeContext } from '~/context/ThemeContext';
 import Google from '../icons/Google';
 import GoogleLogin from 'react-google-login';
 import { useDispatch } from 'react-redux';
-import { Auth } from '~/api/Auth.service';
+import { Auth } from '~/api/Auth.api';
 import { setIsLogin, setUserInfor } from '~/features/AuthSlice';
 import { toastEmit } from '~/utils/toasify';
+import { Users } from '~/api/User.api';
+import { setInfor } from '~/features/UserSlice';
 
 const LoginModal = () => {
   const [visible, setVisible] = React.useState(false);
   const context = useContext(ThemeContext);
   const [username, setUserName] = React.useState('');
   const [password, setPassword] = React.useState('');
+  const handler = () => setVisible(true);
+  const closeHandler = () => setVisible(false);
+  const dispatch = useDispatch();
   const handleLogin = async () => {
     if (username == '' || password == '') {
       toastEmit({ message: "Can't be left empty", type: 'error' });
     } else {
-      const res = await Auth.Login({ username, password });
-
-      console.log(res.data);
-      if (res.status == 200 || res.status == 201) {
-        const data = res.data
-        window.localStorage.setItem("token", data.access_token)
-        dispatch(setUserInfor({fullname:data.user.fullname,email:data.user.email,avatar:data.user.avatar,roles:data.user.roles,isVerify:data.user.isVerify}))
-        dispatch(setIsLogin(true));
-        setVisible(false);
-        toastEmit({ message: 'Login successfuly!', type: 'success' });
-      } else {
-        toastEmit({ message: res.data.message, type: 'error' });
-      }
+      Auth.Login({ username, password })
+        .then((res) => {
+          const data = res.data;
+          window.localStorage.setItem('token', data.access_token);
+          dispatch(
+            setUserInfor({
+              fullname: data.user.fullname,
+              email: data.user.email,
+              avatar: data.user.avatar,
+              roles: data.user.roles,
+              isVerify: data.user.isVerify,
+            }),
+          );
+          dispatch(setIsLogin(true));
+          setVisible(false);
+          toastEmit({ message: 'Login successfuly!', type: 'success' });
+          Users.Infor().then((res: any) => {
+            dispatch(setInfor(res.data.data));
+            setVisible(false);
+          });
+        })
+        .catch((err) => {
+          toastEmit({ message: err.data.message, type: 'error' });
+        });
     }
   };
-  const handler = () => setVisible(true);
-  const closeHandler = () => {
-    setVisible(false);
-  };
-  const dispatch = useDispatch();
 
   // const isLogin = useSelector((state: any) => state.auth);
   const responseGoogle = async (response: any) => {
     if (response.tokenId) {
-      const res = await Auth.loginGoogle({
+      await Auth.loginGoogle({
         idToken: response.tokenId,
         email: response.profileObj.email,
-      });
-      if (res.status == 200) {
-        const data = res.data.data;
-        window.localStorage.setItem('token', data.access_token);
-        dispatch(
-          setUserInfor({
-            fullname: data.user.fullname,
-            email: data.user.email,
-            avatar: data.user.avatar,
-            roles: data.user.roles,
-            isVerify: data.user.isVerify,
-          }),
-        );
-        dispatch(setIsLogin(true));
-        setVisible(false);
-        toastEmit({ message: 'Login successfuly!', type: 'success' });
-      }
+      })
+        .then(async (respone) => {
+          const data = respone.data.data;
+          window.localStorage.setItem('token', data.access_token);
+          dispatch(
+            setUserInfor({
+              fullname: data.user.fullname,
+              email: data.user.email,
+              avatar: data.user.avatar,
+              roles: data.user.roles,
+              isVerify: data.user.isVerify,
+            }),
+          );
+          dispatch(setIsLogin(true));
+          toastEmit({ message: 'Login successfuly!', type: 'success' });
+          Users.Infor().then((res: any) => {
+            dispatch(setInfor(res.data.data));
+          setVisible(false);
+          });
+        })
+        .catch((err) => {
+          toastEmit({ message: err.data.message, type: 'error' });
+        });
     }
   };
   return (

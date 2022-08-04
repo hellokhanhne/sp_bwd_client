@@ -1,4 +1,5 @@
 import About from '~/views/About';
+import Profile from '~/views/Auth/Profile';
 import Register from '~/views/Auth/Register';
 import Contact from '~/views/Contact/Contact';
 import Home from '~/views/Home';
@@ -32,6 +33,10 @@ export const publicRoutes: iPublicRoute[] = [
   {
     path: '/register',
     element: <Register />,
+  },
+  {
+    path: '/profile',
+    element: <Profile/>
   },
 ];
 

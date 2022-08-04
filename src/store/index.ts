@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
-import statusReducer from '../features/RemoveBackground';
-import authReducer from '../features/AuthSlice';
+import statusSlice from '../features/RemoveBackground';
+import authSlice from '../features/AuthSlice';
+import UserSlice from '~/features/UserSlice';
 export const store = configureStore({
   reducer: {
-    status: statusReducer,
-    auth: authReducer,
+    status: statusSlice,
+    auth: authSlice,
+    infor: UserSlice,
   },
 });

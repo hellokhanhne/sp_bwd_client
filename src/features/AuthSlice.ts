@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { UserRoles } from '~/api/Auth.service';
+import { UserRoles } from '~/api/Auth.api';
 
 interface IUserInfo {
   fullname: string;

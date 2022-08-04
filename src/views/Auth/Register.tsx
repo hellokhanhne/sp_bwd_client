@@ -3,8 +3,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Button, Card, Input, Spacer, Text } from '@nextui-org/react';
 import React, { useEffect, useState } from 'react';
 import { GoogleLogin } from 'react-google-login';
-import { useDispatch } from 'react-redux';
-import { Auth, UserRoles } from '~/api/Auth.service';
+import { useDispatch, useSelector } from 'react-redux';
+import { Navigate } from 'react-router-dom';
+import { Auth, UserRoles } from '~/api/Auth.api';
 import { Mail, Password } from '~/components/icons';
 import Google from '~/components/icons/Google';
 import { setIsLogin, setUserInfor } from '~/features/AuthSlice';
@@ -34,7 +35,7 @@ const Register = () => {
   };
   const dispatch = useDispatch();
 
-  // const isLogin = useSelector((state: any) => state.auth);
+  const isLogin = useSelector((state: any) => state.auth.islogin);
   const responseGoogle = async (response: any) => {
     if (response.tokenId) {
      
@@ -53,12 +54,13 @@ const Register = () => {
     script.src = '/index.js';
     script.async = true;
     document.body.appendChild(script);
-    console.log('loadscrit');
     return () => {
-      console.log('remove script');
       document.body.removeChild(script);
     };
   }, []);
+  if (isLogin) {
+    return <Navigate to="/"/>
+  }
   return (
     <div className='register container-fluid  py-5'>
       <div className='container'>

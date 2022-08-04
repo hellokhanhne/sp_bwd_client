@@ -1,5 +1,5 @@
 import axios from 'axios';
-export const BASE_URL = 'http://localhost:4000/api/';
+export const BASE_URL = `http://${import.meta.env.VITE_NEST_SERVER}:${import.meta.env.VITE_NEST_PORT}/api/`;
 
 const baseAxios = axios.create({
   baseURL: BASE_URL,
@@ -24,7 +24,7 @@ baseAxios.interceptors.response.use(
     return response;
   },
   function (error) {
-    return error.response;
+    throw error.response;
   },
 );
 
