@@ -23,7 +23,7 @@ code {
 }
 
 canvas {
-  width: 65% !important;
+  max-width: 668px !important;
   height: auto !important;
 }
 
