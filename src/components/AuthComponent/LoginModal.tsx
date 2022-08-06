@@ -8,7 +8,6 @@ import { useDispatch } from 'react-redux';
 import { Auth } from '~/api/Auth.api';
 import { setIsLogin, setUserInfor } from '~/features/AuthSlice';
 import { toastEmit } from '~/utils/toasify';
-import { Users } from '~/api/User.api';
 import { setInfor } from '~/features/UserSlice';
 
 const LoginModal = () => {
@@ -37,12 +36,9 @@ const LoginModal = () => {
             }),
           );
           dispatch(setIsLogin(true));
+          dispatch(setInfor(data.infor));
           setVisible(false);
           toastEmit({ message: 'Login successfuly!', type: 'success' });
-          Users.Infor().then((res: any) => {
-            dispatch(setInfor(res.data.data));
-            setVisible(false);
-          });
         })
         .catch((err) => {
           toastEmit({ message: err.data.message, type: 'error' });
@@ -70,11 +66,9 @@ const LoginModal = () => {
             }),
           );
           dispatch(setIsLogin(true));
+          dispatch(setInfor(data.infor));
           toastEmit({ message: 'Login successfuly!', type: 'success' });
-          Users.Infor().then((res: any) => {
-            dispatch(setInfor(res.data.data));
           setVisible(false);
-          });
         })
         .catch((err) => {
           toastEmit({ message: err.data.message, type: 'error' });

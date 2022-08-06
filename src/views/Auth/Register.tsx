@@ -9,6 +9,7 @@ import { Auth, UserRoles } from '~/api/Auth.api';
 import { Mail, Password } from '~/components/icons';
 import Google from '~/components/icons/Google';
 import { setIsLogin, setUserInfor } from '~/features/AuthSlice';
+import { setInfor } from '~/features/UserSlice';
 import { toastEmit } from '~/utils/toasify';
 import './register.scss';
 
@@ -45,6 +46,7 @@ const Register = () => {
         window.localStorage.setItem("token", data.access_token)
         dispatch(setUserInfor({fullname:data.user.fullname,email:data.user.email,avatar:data.user.avatar,roles:data.user.roles,isVerify:data.user.isVerify}))
         dispatch(setIsLogin(true));
+        dispatch(setInfor(data.infor));
         toastEmit({ message: 'Login successfuly!', type: 'success' });
       }
     } 

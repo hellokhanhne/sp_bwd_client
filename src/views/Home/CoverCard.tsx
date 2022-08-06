@@ -48,8 +48,8 @@ export default function App() {
   return (
     <div className='row mt-1'>
       {list.map((item, index) => (
-        <div className='col-6 col-sm-3 mt-3' key={index}>
-          <Card isPressable >
+        <div className='col-6 col-sm-3 mt-3'  key={index} data-aos="flip-down">
+          <Card isPressable style={{background:'transparent'}} >
             <Card.Body css={{ p: 0 }}>
               <Card.Image
                 src={item.img}

@@ -7,11 +7,14 @@ import 'react-toastify/dist/ReactToastify.min.css';
 import AOS from 'aos';
 import { useEffect } from 'react';
 import Loader from './components/atoms/LoaderRender/Loader';
+import { useSelector } from 'react-redux';
 function App() {
+  const sate=useSelector(state=>state)
   useEffect(() => {
     AOS.init({ duration: 3000 });
     AOS.refresh();
   });
+  console.log(sate)
   return (
     <>
       <Routes>
