@@ -8,4 +8,6 @@ import idol7 from '~/assets/images/idol7.jpeg';
 import idol8 from '~/assets/images/idol8.jpg';
 import idol9 from '~/assets/images/idol9.jpg';
 
-export { idol1, idol2, idol3, idol4, idol5, idol6, idol7, idol8, idol9 };
+
+import iconnect from '~/assets/images/iconnect.png'
+export { idol1, idol2, idol3, idol4, idol5, idol6, idol7, idol8, idol9 ,iconnect};
