@@ -1,22 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { iconnect } from '~/assets';
-interface IProps {
-  readonly history?: any;
-}
-
-class Banner extends React.PureComponent<IProps> {
-  // useEffect(() => {
-  //   const script = window.document.createElement('script');
-  //   script.src = 'index.js';
-  //   script.async = true;
-  //   document.body.appendChild(script);
-  //   console.log('loadscrit');
-  //   return () => {
-  //     console.log('remove script');
-  //     document.body.removeChild(script);
-  //   };
-  // }, []);
+class Banner extends React.Component {
 
   public render() {
     return (
@@ -56,7 +41,7 @@ class Banner extends React.PureComponent<IProps> {
             </div>
           </div>
         </div>
-        <div className=' d-flex justify-content-end' id='threeEarth' style={{ height: 338 }}>
+        <div className=' d-flex justify-content-end' id='threeEarth' style={{ height: 388 }}>
             <img src={iconnect} />
         </div>
       </div>
