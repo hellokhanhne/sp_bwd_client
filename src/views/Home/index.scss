@@ -14,3 +14,57 @@
     height: 40px;
   }
 }
+
+.introduction {
+  &-tip {
+    font-size: 24px;
+    font-weight: 500;
+    color: #fdba04;
+  }
+  &-title {
+    font-size: 36px;
+    font-weight: bold;
+    color: #0d1545;
+    letter-spacing: unset;
+  }
+  &-devide {
+    display: block;
+    width: 88px;
+    height: 8px;
+    background: #3753fa;
+    margin-bottom: 36px;
+  }
+  &-list-feature {
+    margin-bottom: 20px;
+    & li {
+      padding-left: 30px;
+      font-size: 16px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 500;
+      color: #0d1545;
+      line-height: 28px;
+      margin-bottom: 16px;
+      position: relative;
+      &::before {
+        content: '';
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        left: 0;
+        top: 4px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        background-color: unset;
+        background-image: url('../../assets/images/icon_label.svg');
+      }
+    }
+  }
+  & button {
+    height: 50px !important;
+    margin-top: 20px;
+    padding: 0px 60px !important;
+    box-sizing: content-box;
+  }
+}

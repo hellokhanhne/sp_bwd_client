@@ -2,21 +2,22 @@ import React from 'react';
 import './footer.scss';
 const Footer = () => {
   return (
-    <footer className='text-center'>
+    <footer className='text-center footer'>
       <div className='container p-4'>
         <section className=''>
           <div className='row'>
             <div className='col-lg-3 col-sm-6 mb-4 mb-md-0'>
               <div className='contaiter'>
-                <div className='row '>
-                  <h1 className='logo'>iConnect</h1>
+                <div className='d-flex  footer-logo'>
+                  {/* <h1 className='logo'>iConnect</h1> */}
+                  <img src='/src/assets/images/iconnect.png' alt='' />
                 </div>
               </div>
             </div>
             <div className='col-lg-3 col-sm-6 mb-4 mb-md-0'>
-              <h5 className='text-uppercase'>Page</h5>
+              <h5 className=' footer-option'>Page</h5>
 
-              <ul className='list-unstyled mb-0' style={{ alignItems: 'flex-start' }}>
+              <ul className='list-unstyled mb-0 footer-links' style={{ alignItems: 'flex-start' }}>
                 <li className='float-left'>
                   <p>Influencer</p>
                 </li>
@@ -29,9 +30,9 @@ const Footer = () => {
               </ul>
             </div>
             <div className='col-lg-3 col-sm-6 mb-4 mb-md-0'>
-              <h5 className='text-uppercase'>Contact</h5>
+              <h5 className=' footer-option'>Contact</h5>
 
-              <ul className='list-unstyled mb-0'>
+              <ul className='list-unstyled mb-0 footer-links'>
                 <li>
                   <p>0345648638</p>
                 </li>
@@ -44,9 +45,9 @@ const Footer = () => {
               </ul>
             </div>
             <div className='col-lg-3 col-sm-6 mb-4 mb-md-0'>
-              <h5 className='text-uppercase'>Links</h5>
+              <h5 className=' footer-option'>Links</h5>
 
-              <ul className='list-unstyled mb-0'>
+              <ul className='list-unstyled mb-0 footer-links '>
                 <li>
                   <p className=' '>
                     <i className='fab fa-instagram'></i> Instagram
@@ -65,7 +66,7 @@ const Footer = () => {
               </ul>
             </div>
           </div>
-          <div className='row copyright'>
+          <div className='row copyright mt-4'>
             <div className='col-lg-12 col-sm-12 mb-12 text-center'>
               <p>
                 <small className='block fs-6'>

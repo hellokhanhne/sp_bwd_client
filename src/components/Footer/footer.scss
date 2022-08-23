@@ -6,3 +6,39 @@
     }
   }
 }
+
+.footer {
+  border-top: 1px solid #edebeb;
+  padding: 1rem 0;
+  &-logo {
+    & img {
+      width: 250px;
+      object-position: top center;
+      object-fit: cover;
+      // height: 200px;
+    }
+  }
+  &-option {
+    margin: 0;
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+    color: #0d1546;
+  }
+  &-links {
+    & p {
+      font-size: 16px;
+      color: rgba(13, 21, 70, 0.65);
+      font-family: 'Poppins', sans-serif;
+      cursor: pointer;
+    }
+  }
+  & .copyright {
+    & small {
+      font-size: 14px;
+      color: rgba(13, 21, 70, 0.65);
+    }
+  }
+}

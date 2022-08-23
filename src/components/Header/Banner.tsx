@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { iconnect } from '~/assets';
 class Banner extends React.Component {
-
   public render() {
     return (
       <div className='slider-banner ' style={{ position: 'relative' }}>
@@ -42,7 +41,7 @@ class Banner extends React.Component {
           </div>
         </div>
         <div className=' d-flex justify-content-end' id='threeEarth' style={{ height: 388 }}>
-            <img src={iconnect} />
+          <img src={iconnect} />
         </div>
       </div>
     );
