@@ -6,7 +6,7 @@ const CardTop = ({ cardTitle, value, cardSubtitle, color }: any) => (
   <Card
     variant='bordered'
     css={{ borderRadius: '15px', boxShadow: `0px 5px 5px 0px ${color}`, background: 'unset' }}
-    data-aos='zoom-in-right'
+    // data-aos='zoom-in-right'
   >
     <Card.Header>
       <Text h4 className='font-popin'>

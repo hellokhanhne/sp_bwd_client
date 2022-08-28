@@ -46,3 +46,11 @@ canvas {
 .color-primary {
   color: #141c50;
 }
+
+.color-secondary {
+  color: #f54153;
+}
+
+.flex-row-reverse {
+  flex-direction: row-reverse;
+}
