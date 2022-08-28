@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import BaseLayout from './layout/BaseLayout';
 import { publicRoutes } from './routers';
 import { ToastContainer } from 'react-toastify';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-toastify/dist/ReactToastify.min.css';
 import 'aos/dist/aos.css';
 import AOS from 'aos';
@@ -13,7 +14,7 @@ function App() {
   useEffect(() => {
     AOS.init({ duration: 3000 });
     AOS.refresh();
-  });
+  },[]);
   console.log(sate)
   return (
     <>

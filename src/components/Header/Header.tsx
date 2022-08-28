@@ -15,6 +15,7 @@ interface IHeaderProps {
 const Header = ({ setMode }: IHeaderProps) => {
   const location = useLocation();
   const [checked, setChecked] = useState(false);
+  const [show, setShow] = useState(false);
   useEffect(() => {
     const time = new Date().getHours();
     if ([6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17].includes(time)) {
@@ -24,7 +25,7 @@ const Header = ({ setMode }: IHeaderProps) => {
   const isLogin = useSelector((state: any) => state.auth.islogin);
   return (
     <>
-      <nav className='navbar navbar-expand-md py-1 shadow'>
+      <nav className='navbar navbar-expand-lg py-1 shadow'>
         <div className='container'>
           <Link to='/' className='navbar-brand d-flex align-items-center'>
             {' '}
@@ -32,16 +33,12 @@ const Header = ({ setMode }: IHeaderProps) => {
           </Link>
           <button
             type='button'
-            data-toggle='collapse'
-            data-target='#navbarSupportedContent'
-            aria-controls='navbarSupportedContent'
-            aria-expanded='false'
-            aria-label='Toggle navigation'
-            className='navbar-toggler'
+            className='navbar-toggler bodder bodder-info text-info '
+            onClick={()=>setShow(prevShow=>!prevShow)}
           >
-            <span className='navbar-toggler-icon'></span>
+            <span className='navbar-toggler-icon' style={{color:'#ff1111'}}></span>
           </button>
-          <div id='navbarSupportedContent' className='collapse navbar-collapse'>
+          <div className={`collapse navbar-collapse ${show?'nav-active':''}`}>
             <ul className='navbar-nav ms-auto'>
               {menu.map((item, i) => (
                 <ItemMenu

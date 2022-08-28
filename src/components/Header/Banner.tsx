@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { iconnect } from '~/assets';
 class Banner extends React.Component {
 
   public render() {
@@ -41,8 +40,19 @@ class Banner extends React.Component {
             </div>
           </div>
         </div>
-        <div className=' d-flex justify-content-end' id='threeEarth' style={{ height: 388 }}>
-            <img src={iconnect} />
+        <div className='d-flex justify-content-end' style={{ height: 418 }}>
+          <div id="banner-index">
+            <ul>
+              <li>i</li>
+              <li>C</li>
+              <li>o</li>
+              <li>n</li>
+              <li>n</li>
+              <li>e</li>
+              <li>c</li>
+              <li>t</li>
+            </ul>
+          </div>
         </div>
       </div>
     );

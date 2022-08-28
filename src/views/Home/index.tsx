@@ -10,7 +10,7 @@ const Home = () => {
   return (
     <div className='home container-fluid pt-5'>
       <div className='container justify-content-center mb-4'>
-        <h1 className='text-center logo mb-5'>iConnect Global</h1>
+        <h1 className='text-center mb-5'><span className="logo fs-1 fw-bold">iConnect Global</span></h1>
         {/* <h3 className='text-center'>
           <b>Global</b>
         </h3> */}
