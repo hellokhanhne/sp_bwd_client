@@ -1,19 +1,9 @@
-import CardTop from '~/components/Card/CardTop';
 import { Introduction } from '~/components/HomeComponent';
-import About from '~/components/Portfolio/About';
-import { MarqueeSlide } from '~/components/Slider/MarqueSlide';
-import { CitiesSlider } from '~/components/Slider/Slider';
-import Title from '~/components/Title/Title';
-import { topdata, idol } from '~/constants/data';
-import CoverCard from './CoverCard';
 import './index.scss';
 const Home = () => {
   return (
     <div className='home container-fluid pt-5'>
       <div className='container justify-content-center mb-4'>
-<<<<<<< HEAD
-        <h1 className='text-center mb-5'><span className="logo fs-1 fw-bold">iConnect Global</span></h1>
-=======
         <Introduction
           img='https://d35b8pv2lrtup8.cloudfront.net/assets/img/social_book/homepage/two-image@2x.5d31fec3b670fb157306.png'
           list={[
@@ -39,7 +29,7 @@ const Home = () => {
         />
 
         {/* <h1 className='text-center logo mb-5'>iConnect Global</h1> */}
->>>>>>> 35bd1ceb74a084713b62627b8ee367100a12ce51
+
         {/* <h3 className='text-center'>
           <b>Global</b>
         </h3> */}

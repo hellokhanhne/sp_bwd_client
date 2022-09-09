@@ -39,9 +39,8 @@ class Banner extends React.Component {
             </div>
           </div>
         </div>
-<<<<<<< HEAD
         <div className='d-flex justify-content-end' style={{ height: 418 }}>
-          <div id="banner-index">
+          <div id='banner-index'>
             <ul>
               <li>i</li>
               <li>C</li>
@@ -53,10 +52,6 @@ class Banner extends React.Component {
               <li>t</li>
             </ul>
           </div>
-=======
-        <div className=' d-flex justify-content-end' id='threeEarth' style={{ height: 388 }}>
-          <img src={iconnect} />
->>>>>>> 35bd1ceb74a084713b62627b8ee367100a12ce51
         </div>
       </div>
     );
